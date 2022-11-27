@@ -30,7 +30,7 @@ The insertion point in the rendered page for the rendered merge. Indicates the t
 
 ## Template
 
-HTML structure to be repeated for each record. Contains placeholders which get automatically loaded with data from Records. 
+Arbitrary, user-defined HTML structure to be repeated for each record. Contains placeholders which get automatically loaded with data from Records. 
 
 ```
 <template id="artist">
