@@ -30,7 +30,7 @@ The insertion point in the rendered page for the rendered merge. Indicates the t
 
 ## Template
 
-Arbitrary, user-defined HTML structure to be repeated for each record. Contains placeholders which get automatically loaded with data from Records. 
+Arbitrary, user-defined HTML structure to be repeated for each record. Contains field-placeholders which get automatically loaded with data from Records. Placeholders are indicated with double-brackets `[[MyField]]`. 
 
 ```
 <template id="artist">
@@ -45,7 +45,7 @@ Arbitrary, user-defined HTML structure to be repeated for each record. Contains 
 
 ## Records
 
-A simple newline-delimited list. Fieldnames are stated only once, on the first row. Leading spaces/tabs are ignored. Uses a simple tilde `~` delimiter, so no conflict with commas, no escape characters needed. No brackets, braces, parens, or angles. 
+A simple newline-delimited list. Fieldnames are stated only once, on the first row. Leading spaces/tabs are ignored. Uses a simple tilde `~` delimiter, so no conflict with commas, no escape characters needed. No brackets, braces, parens, or angles. Headers must match fieldnames in the template. 
 
 ```
 <records hidden id="sculptors">
