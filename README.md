@@ -14,7 +14,7 @@ All dynamic assets can be contained within a single HTML file. No database neede
  - **Container:** The insertion point in the rendered page for the rendered merge.
  - **Template:** HTML structure to be repeated for each record. 
  - **Records:** A simple newline-delimited list. 
- 
+
 **Files**
  - **microtemplate.js**: The only file needed to use the system. Include it in an HTML file with `<script src="microtemplate.js"></script>`
  - **demo.html**: Demos proper layout of the Template, Records, and Container. 
@@ -24,13 +24,13 @@ All dynamic assets can be contained within a single HTML file. No database neede
 
 ## Container
 
-Indicates the template and records to merge. 
+The insertion point in the rendered page for the rendered merge. Indicates the template and records to merge. 
 
 `<span records="EEs" template="engineer" class="engineers"></span>`
 
 ## Template
 
-Contains placeholders which get automatically loaded with data from Records. 
+HTML structure to be repeated for each record. Contains placeholders which get automatically loaded with data from Records. 
 
 ```
 <template id="artist">
@@ -45,7 +45,7 @@ Contains placeholders which get automatically loaded with data from Records.
 
 ## Records
 
-Fieldnames are stated only once, on the first row. Leading spaces/tabs are ignored. Uses a simple tilde `~` delimiter, so no conflict with commas, no escape characters needed. No brackets, braces, parens, or angles. 
+A simple newline-delimited list. Fieldnames are stated only once, on the first row. Leading spaces/tabs are ignored. Uses a simple tilde `~` delimiter, so no conflict with commas, no escape characters needed. No brackets, braces, parens, or angles. 
 
 ```
 <records hidden id="sculptors">
