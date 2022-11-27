@@ -1,0 +1,54 @@
+* {
+	text-align: center;
+}
+
+.engineers {
+	display: flex;
+	flex-wrap: wrap;
+}
+
+.engineer {
+	width: 250px;
+}
+
+.engineer .img-clip {
+	height: 200px;
+	width: 200px;
+	overflow: hidden;
+	border-radius: 10px 50px;
+	margin-bottom: 8px;
+	background-color: black;
+}
+
+.engineer img {
+	width: 100%;
+}
+
+.engineer .caption {
+	background: lightgoldenrodyellow;
+	width: 190px;
+	border-radius: 10px;
+	border: solid;
+	padding: 5px;
+	margin-bottom: 40px;
+}
+
+.artists {
+	display: flex;
+	flex-wrap: wrap;
+	font-family: arial;
+	font-weight: bold;
+}
+
+.artist {
+	width: 150px;
+}
+
+.artist img {
+	width: 100px;
+}
+
+.artist .caption {
+	margin-bottom: 40px;
+	color: green;
+}
