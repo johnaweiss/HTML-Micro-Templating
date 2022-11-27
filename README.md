@@ -54,5 +54,6 @@ A simple newline-delimited list. Fieldnames are stated only once, on the first r
 	Khang Le Schoenthal~khang.jpg~khangle.webflow.io
 	Ivan Lopez~ivan-lopez-crop.jpg~ilcolors.com
 	Genevieve Dupre~genevieve-dupre-crop.jpg~genevievetattoos.com
+	Joey Armstrong~joey-armstrong-crop-1.jpg~thunderhandtattoo.com
 </records>
 ```
