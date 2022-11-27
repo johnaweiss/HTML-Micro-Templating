@@ -45,7 +45,7 @@ Arbitrary, user-defined HTML structure to be repeated for each record. Contains 
 
 ## Records
 
-A simple newline-delimited list. Fieldnames are stated only once, on the first row. Leading spaces/tabs are ignored. Uses a simple tilde `~` delimiter, so no conflict with commas, no escape characters needed. No brackets, braces, parens, or angles. Headers must match fieldnames in the template. 
+A simple newline-delimited list. Fieldnames are stated only once, on the first row. Leading spaces/tabs are ignored. Uses a simple tilde `~` field-delimiter, so no conflict with commas, no escape characters needed. To simplify data-entry, it uses no brackets, braces, parens, or angles. Headers must match fieldnames in the template. 
 
 ```
 <records hidden id="sculptors">
