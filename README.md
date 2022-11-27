@@ -52,5 +52,7 @@ A simple newline-delimited list. Fieldnames are stated only once, on the first r
 	NAME~IMG~LINK
 	Orlie Kapitulnik~orliek-crop-2.jpg~orliek.com
 	Khang Le Schoenthal~khang.jpg~khangle.webflow.io
+	Ivan Lopez~ivan-lopez-crop.jpg~ilcolors.com
+	Genevieve Dupre~genevieve-dupre-crop.jpg~genevievetattoos.com
 </records>
 ```
