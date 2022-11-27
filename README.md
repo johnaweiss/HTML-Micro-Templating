@@ -7,7 +7,7 @@ Enables HTML programmer to generate unlimited elements with identical layout by 
 
 Designed to minimize effort for the HTML programmer. Provides features that the `<template>` tag doesn't offer alone. For example, template-fields can be placed anywhere in the template, including element attributes. HTML programmer can easily mix and match templates, containers, and records, as long as the fields match. 
 
-All dynamic assets can be contained within a single HTML file. No database needed. Built using vanilla HTML and Javascript. No library or framework needed. Extremely lightweight Javascript. 
+All dynamic assets can be contained within a single HTML file. No database needed. Built using vanilla Javascript. No library or framework needed. Extremely lightweight Javascript. 
 
 **HTML elements**
 
