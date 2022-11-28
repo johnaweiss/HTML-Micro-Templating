@@ -1,13 +1,19 @@
 # HTML Micro Templating System
 ---------------------------
 
-A lightweight, robust HTML templating system. 
+A lightweight, robust HTML node-layout templating system. Designed to minimize effort and reduce keystrokes for the HTML programmer and content admins. It enables HTML programmer to more easily control the layout of an arbitrary series of identical HTML nodes, each containing different data. 
 
-Enables HTML programmer to generate unlimited elements with identical layout by simply editing a list of records. The records get merged with an HTML template, and outputs rendered HTML for each record. 
+ - There's just one copy of the HTML layout to edit. 
+ - Content admins never need to touch the HTML of the node-series. They just edit a plain-text list of records. 
+ - All dynamic assets can be contained within a single HTML file. 
+ - No database needed. 
+ - Built using vanilla Javascript. No library or framework needed. Extremely lightweight Javascript. 
+ - HTML layouts can be mixed and switched with the same ease as CSS styles, as long as the fields match up. 
+ - Data-placeholders can be anywhere in the template's HTML, including element metadata. So, for example, you can use a template-variable for the `src` of an `<img>`: `<img src = [[IMAGE-DATA]] alt = "">`
 
-Designed to minimize effort for the HTML programmer. Provides features that the `<template>` tag doesn't offer alone. For example, template-fields can be placed anywhere in the template, including element attributes. HTML programmer can easily mix and match templates, containers, and records, as long as the fields match. 
+## Operation
 
-All dynamic assets can be contained within a single HTML file. No database needed. Built using vanilla Javascript. No library or framework needed. Extremely lightweight Javascript. 
+It operates like a mailmerge. The record-list gets merged with the HTML template, and rendered HTML for all records is written to the webpage. 
 
 **HTML elements**
 
