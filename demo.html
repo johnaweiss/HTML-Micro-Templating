@@ -1,63 +1,91 @@
-<!-------------- CONTAINERS ------------------>
+<html>
+	
+	<head>
+		<title>Micro Templating Demo</title>
+		
+		<link rel="stylesheet" type="text/css" href="Style.css">
+		  
+		<!-----------------  TEMPLATING SCRIPT  ------------------->
+		<script src="MicroTemplate.js"></script>
+	
+		<!-----------------  EXTERNAL DATA FILE  ------------------- 
+		Can move records to external files. A file can contain multiple datasets. 
+		If move datasets to external file, uncomment the statement below, 
+		and change the extension of this .html file to .php
+		<?php echo file_get_contents("records.html"); ?>
+		-->
+	
+	</head>
 
-<h2>Electrical Engineers</h2>
-<span records="EEs" template="engineer" class="engineers">
-</span>
+	
+	<body>
+	  	
+		<!-- repl badge -->
+		<script src="https://replit.com/public/js/replit-badge.js" theme="blue" defer></script>
+		
+	
+		<!-------------- MERGE CONTAINERS ------------------->
+		<H2>template="artist" records="EEs"</H2>
+		<span template="artist" records="EEs" class="artists"></span>
+		
+		<H2>template="engineer" records="EEs"</H2>
+		<span template="engineer" records="EEs" class="artists"></span>
+		
+		<H2>template="engineer" records="MEs"</H2>
+		<span template="engineer" records="MEs" class="engineers"></span>
+  
+	</body>
 
-<h2>Mechanical Engineers</h2>
-<span records="MEs" template="engineer" class="engineers">
-</span>
+	
+	<!-------------- TEMPLATES ------------------>
+	<templates-j>
 
-<h3>Sculptors</h3>
-<span records="sculptors" template="artist" class="artists">
-</span>
+		
+		<template id="engineer">
+			<span class="engineer">
+				<a target="_blank" href="http://[[LINK]]">
+					<div class="img-clip">
+						<img src="https://tinyurl.com/2mv3jtzh/[[IMG]]" alt="">
+					</div>
+					<div class="caption">[[NAME]]</div>
+				</a>
+			</span>
+		</template>
 
-<h1>Random</h1>
-<span records="sculptors" template="engineer" class="artists">
-</span>
+		
+		<template id="artist">
+			<span class="artist">
+					<div class="caption">[[NAME]]</div>
+						<img src="https://tinyurl.com/2mv3jtzh/[[IMG]]" alt="">
+			</span>
+		</template>
 
-<!-------------- TEMPLATES ------------------>
+		
+	</templates-j>
+		
 
-<template id="engineer">
-	<span class="engineer">
-		<a target="_blank" href="http://[[LINK]]">
-			<div class="img-clip">
-				<img src="https://bayviewboom.org/data/uploads/photos/people/artists/[[IMG]]" alt="">
-			</div>
-			<div class="caption">[[NAME]]
-			</div>
-		</a>
-	</span>
-</template>
-
-<template id="artist">
-	<span class="artist">
-		<a target="_blank" href="http://[[LINK]]">
-			<img src="https://bayviewboom.org/data/uploads/photos/people/artists/[[IMG]]" alt="">
-			<div class="caption">[[NAME]]</div>
-		</a>
-	</span>
-</template>
-
-<!-------------- DATA ------------------>
-
-<records hidden id="EEs">
-	NAME~IMG~LINK
-	Elisa Sassi~elisa-sassi-bike-crop.jpg~elisasassi.com
-	Sirron Norris~sirron-crop.jpg~sirronnorris.com
-	Nigel Sussman~Nigel Sussman.jpg~nigelsussman.com
-	Ador & Semor~ador-semor-crop-3.jpg~thesemor.tumblr.com/Ador&Semor
-</records>
-
-<records hidden id="MEs">
-	NAME~IMG~LINK
-	Ivan Lopez~ivan-lopez-crop.jpg~ilcolors.com
-	Genevieve Dupre~genevieve-dupre-crop.jpg~genevievetattoos.com
-	Joey Armstrong~joey-armstrong-crop-1.jpg~thunderhandtattoo.com
-</records>
-
-<records hidden id="sculptors">
-	NAME~IMG~LINK
-	Orlie Kapitulnik~orliek-crop-2.jpg~orliek.com
-	Khang Le Schoenthal~khang.jpg~khangle.webflow.io
-</records>
+	<!-------------- RECORDSETS ------------------>
+		<!-- White space surrounding the delimiter is ignored, and not required. -->
+		<!-- Column order doesn't matter -->
+	<recordsets-j>
+		
+		<records hidden id="EEs">
+			NAME	~	IMG	~	LINK
+			Elisa Sassi 	~	elisa-sassi-bike-crop.jpg	~	elisasassi.com
+			Sirron Norris	~	sirron-crop.jpg	~	sirronnorris.com
+			Nigel Sussman	~	Nigel Sussman.jpg	~	nigelsussman.com
+			Ador & Semor	~	ador-semor-crop-3.jpg	~	thesemor.tumblr.com/Ador&Semor
+		</records>
+		
+		
+		<records hidden id="MEs">
+			IMG	~	NAME	~	LINK
+			genevieve-dupre-crop.jpg	~	Genevieve Dupre	~	genevievetattoos.com
+			ivan-lopez-crop.jpg	~	Ivan Lopez	~	ilcolors.com
+			joey-armstrong-crop-1.jpg	~	Joey Armstrong	~	thunderhandtattoo.com	
+		</records>
+		
+	</recordsets-j>
+	
+	
+</html>
