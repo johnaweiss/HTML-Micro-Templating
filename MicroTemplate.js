@@ -1,6 +1,4 @@
-// Include it in an HTML file with `<script src="micro-template.js"></script>`
-
-window.onload = function Merge_Data() {
+window.onload = function Merge_Templates() {
 	// get insertion-point containers for merged HTML (has a template attribute)
 	const containers = document.querySelectorAll("[template]");
 
@@ -13,7 +11,7 @@ window.onload = function Merge_Data() {
 		[headers, records] = getData(container);
 
 		// merge data to template to get rendered HTML
-		const mergeHTML = makeMerge(headers, records, templateHTML);
+		const mergeHTML = mergeRecords(headers, records, templateHTML);
 
 		// append merged-HTML to container
 		container.innerHTML = mergeHTML;
@@ -28,9 +26,11 @@ function getTemplateHTML(container) {
 }
 
 function getData(container) {
+	// return headers and records as arrays
 	const rawData = getRawData(container);
-	const sDelim = "~";
-	const [headers, headersEnd] = getheaders(rawData, sDelim);
+	// field-delimiter is tilde surrounded by 0 or more spaces or tabs
+	const sDelim = /[ \t]*\~[ \t]*/g;
+	const [headers, headersEnd] = getHeaders(rawData, sDelim);
 	const records = getRecords(rawData, headersEnd, sDelim);
 	return [headers, records];
 }
@@ -43,7 +43,7 @@ function getRawData(container) {
 	return rawData;
 }
 
-function getheaders(rawData, sDelim) {
+function getHeaders(rawData, sDelim) {
 	// load headers into array
 	const headersEnd = rawData.indexOf("\n");
 	const headers = rawData.slice(0, headersEnd).split(sDelim);
@@ -52,6 +52,7 @@ function getheaders(rawData, sDelim) {
 
 function getRecords(rawData, headersEnd, sDelim) {
 	// load records into array, rows and columns
+	// reg exp: newline + 0 or more spaces or tabs
 	const sRegExp = /\n[ \t]*/g;
 	const aRows = rawData.slice(headersEnd).trim().split(sRegExp);
 	const records = aRows.map((sRow) => {
@@ -61,23 +62,28 @@ function getRecords(rawData, headersEnd, sDelim) {
 	return records;
 }
 
-function makeMerge(headers, records, templateHTML) {
-	// make html for each record by loading current variables into temlate
+function mergeRecords(headers, records, templateHTML) {
+	// make html for each record by merging with temlate
 	let allRecordsHTML = "";
 
-	records.forEach((oRec) => {
-		let recordHTML = templateHTML;
-
-		// loop fields
-		headers.forEach((field, column) => {
-			// get value and placeholder
-			const value = oRec[column];
-			const placeholder = `\[[${field}]]`;
-
-			// load variable into temlate
-			recordHTML = recordHTML.replaceAll(placeholder, value);
-		});
+	records.forEach((record) => {
+		let recordHTML = mergeRecord(templateHTML, headers, record)
 		allRecordsHTML += recordHTML;
 	});
 	return allRecordsHTML;
+}
+
+function mergeRecord(templateHTML, headers, record) {
+	let recordHTML = templateHTML;
+
+	// loop fields
+	headers.forEach((field, column) => {
+		// get value and placeholder
+		const value = record[column];
+		const placeholder = `\[[${field}]]`;
+
+		// load variable into temlate
+		recordHTML = recordHTML.replaceAll(placeholder, value);
+	});
+	return recordHTML
 }
