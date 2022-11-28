@@ -28,7 +28,7 @@ It operates like a mailmerge. The record-list gets merged with the HTML template
  - **style.css**: *Not needed for this system to work.* Demonstrates normal stying on the merged render. 
  - **records.html**: Optionally, records can be stored in a separate file. 
 
-[Pen](https://codepen.io/johnaweiss/pen/OJEEomJ)
+https://replit.com/@johnaweiss/Micro-Template-Demo?v=1
 
 ## Container
 
