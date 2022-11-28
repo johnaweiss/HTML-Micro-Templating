@@ -19,6 +19,7 @@ All dynamic assets can be contained within a single HTML file. No database neede
  - **microtemplate.js**: The only file needed to use the system. 
  - **demo.html**: Demos proper layout of the Template, Records, and Container. 
  - **style.css**: *Not needed for this system to work.* Demonstrates normal stying on the merged render. 
+ - **records.html**: Optionally, records can be stored in a separate file. 
 
 [Pen](https://codepen.io/johnaweiss/pen/OJEEomJ)
 
