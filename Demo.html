@@ -9,32 +9,37 @@
 		<script src="MicroTemplate.js"></script>
 	
 		<!-----------------  EXTERNAL DATA FILE  ------------------- 
-		Can move records to external files. A file can contain multiple datasets. 
+		Can move records-j to external files. A file can contain multiple datasets. 
 		If move datasets to external file, uncomment the statement below, 
 		and change the extension of this .html file to .php
-		<?php echo file_get_contents("Records.html"); ?>
+		<?php echo file_get_contents("records.html"); ?>
 		-->
 	
 	</head>
 
 	
 	<body>
+		
+		<!-------------- MERGE CONTAINERS ------------------->
+		<H3>template-j="artist" records-j="EEs"</H3>
+		<span template-j="artist" records-j="EEs" class="artists"></span>
+
+		<hr>
+		
+		<H3>template-j="engineer" records-j="EEs"</H3>
+		<span template-j="engineer" records-j="EEs" class="engineers"></span>
+
+		<hr>
+		
+		<H3>template-j="engineer" records-j="MEs"</H3>
+		<span template-j="engineer" records-j="MEs" class="engineers"></span>
+
+		<hr>
 	  	
 		<!-- repl badge -->
 		<script src="https://replit.com/public/js/replit-badge.js" theme="blue" defer></script>
 		
-	
-		<!-------------- MERGE CONTAINERS ------------------->
-		<H2>template="artist" records="EEs"</H2>
-		<span template="artist" records="EEs" class="artists"></span>
-		
-		<H2>template="engineer" records="EEs"</H2>
-		<span template="engineer" records="EEs" class="artists"></span>
-		
-		<H2>template="engineer" records="MEs"</H2>
-		<span template="engineer" records="MEs" class="engineers"></span>
-  
-	</body>
+  	</body>
 
 	
 	<!-------------- TEMPLATES ------------------>
@@ -43,10 +48,9 @@
 		
 		<template id="engineer">
 			<span class="engineer">
+				<div class="title">An Engineer</div>				
 				<a target="_blank" href="http://[[LINK]]">
-					<div class="img-clip">
-						<img src="https://tinyurl.com/2mv3jtzh/[[IMG]]" alt="">
-					</div>
+					<img src="https://tinyurl.com/2mv3jtzh/[[IMG]]" alt="">
 					<div class="caption">[[NAME]]</div>
 				</a>
 			</span>
@@ -69,21 +73,21 @@
 		<!-- Column order doesn't matter -->
 	<recordsets-j>
 		
-		<records hidden id="EEs">
+		<records-j hidden id="EEs">
 			NAME	~	IMG	~	LINK
 			Elisa Sassi 	~	elisa-sassi-bike-crop.jpg	~	elisasassi.com
 			Sirron Norris	~	sirron-crop.jpg	~	sirronnorris.com
 			Nigel Sussman	~	Nigel Sussman.jpg	~	nigelsussman.com
 			Ador & Semor	~	ador-semor-crop-3.jpg	~	thesemor.tumblr.com/Ador&Semor
-		</records>
+		</records-j>
 		
 		
-		<records hidden id="MEs">
+		<records-j hidden id="MEs">
 			IMG	~	NAME	~	LINK
 			genevieve-dupre-crop.jpg	~	Genevieve Dupre	~	genevievetattoos.com
 			ivan-lopez-crop.jpg	~	Ivan Lopez	~	ilcolors.com
 			joey-armstrong-crop-1.jpg	~	Joey Armstrong	~	thunderhandtattoo.com	
-		</records>
+		</records-j>
 		
 	</recordsets-j>
 	
