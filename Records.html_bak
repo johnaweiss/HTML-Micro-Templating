@@ -1,0 +1,25 @@
+<!-- White space surrounding the delimiter is ignored. -->
+<!-- Column order doesn't matter -->
+
+<records hidden id="EEs">
+	NAME	~	IMG	~	LINK
+	Elisa Sassi 	~	elisa-sassi-bike-crop.jpg	~	elisasassi.com
+	Sirron Norris	~	sirron-crop.jpg	~	sirronnorris.com
+	Nigel Sussman	~	Nigel Sussman.jpg	~	nigelsussman.com
+	Ador & Semor	~	ador-semor-crop-3.jpg	~	thesemor.tumblr.com/Ador&Semor
+</records>
+
+
+<records hidden id="MEs">
+	IMG	~	NAME	~	LINK
+	genevieve-dupre-crop.jpg	~	Genevieve Dupre	~	genevievetattoos.com
+	ivan-lopez-crop.jpg	~	Ivan Lopez	~	ilcolors.com
+	joey-armstrong-crop-1.jpg	~	Joey Armstrong	~	thunderhandtattoo.com	
+</records>
+
+
+<records hidden id="sculptors">
+	NAME	~	IMG	~	LINK
+	Khang Le Schoenthal	~	khang.jpg	~	khangle.webflow.io
+	Orlie Kapitulnik	~	orliek-crop-2.jpg	~	orliek.com
+</records>
