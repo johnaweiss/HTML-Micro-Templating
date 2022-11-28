@@ -1,0 +1,98 @@
+<html>
+	
+	<head>
+		<title>Micro Templating Demo</title>
+		  
+		<!-----------------  TEMPLATING SCRIPT  ------------------->
+		<script src="MicroTemplate.js"></script>
+		
+		<!-- Micro Template functionality has no stylesheet dependencies.   -->
+		<link rel="stylesheet" type="text/css" href="Style.css">
+	
+		<!-----------------  EXTERNAL DATA FILE  ------------------- 
+		Can move records to external files. A file can contain multiple datasets. 
+		If move datasets to external file, uncomment the statement below, 
+		and change the extension of this .html file to .php
+		<?php echo file_get_contents("Records.html"); ?>
+		-->
+	
+	</head>
+
+	
+	<body>
+
+		<H1>HTML Micro-Template Demonstration</H1>
+		
+		<!-------------- MERGE CONTAINERS ------------------->
+		<H3>HTML Layout = "artist", Data="Painters"</H3>
+		<span MT-template="artist" MT-records="EEs" class="artists"></span>
+
+		<hr>
+		
+		<H3>HTML Layout = "engineer", Data="Painters"</H3>
+		<span MT-template="engineer" MT-records="EEs" class="engineers"></span>
+
+		<hr>
+		
+		<H3>HTML Layout = "engineer", Data="Tattoo Artists"</H3>
+		<span MT-template="engineer" MT-records="MEs" class="engineers"></span>
+
+		<hr>
+	  	
+		<!-- repl badge -->
+		<script src="https://replit.com/public/js/replit-badge.js" theme="blue", Defer></script>
+		
+  	</body>
+
+	
+	<!-------------- TEMPLATES ------------------>
+	<templates_>
+
+		
+		<template id="engineer">
+			<span class="engineer">
+				<div class="title">An Engineer</div>				
+				<a target="_blank" href="http://[[LINK]]">
+					<img src="https://tinyurl.com/2mv3jtzh/[[IMG]]" alt="">
+					<div class="caption">[[NAME]]</div>
+				</a>
+			</span>
+		</template>
+
+		
+		<template id="artist">
+			<span class="artist">
+					<div class="caption">[[NAME]]</div>
+						<img src="https://tinyurl.com/2mv3jtzh/[[IMG]]" alt="">
+			</span>
+		</template>
+
+		
+	</templates_>
+		
+
+	<!-------------- RECORDSETS ------------------>
+		<!-- White space surrounding the delimiter is ignored, and not required. -->
+		<!-- Column order doesn't matter -->
+	<MT-recordsets>
+		
+		<MT-records hidden id="EEs">
+			NAME	~	IMG	~	LINK
+			Elisa Sassi 	~	elisa-sassi-bike-crop.jpg	~	elisasassi.com
+			Sirron Norris	~	sirron-crop.jpg	~	sirronnorris.com
+			Nigel Sussman	~	Nigel Sussman.jpg	~	nigelsussman.com
+			Ador & Semor	~	ador-semor-crop-3.jpg	~	thesemor.tumblr.com/Ador&Semor
+		</MT-records>
+		
+		
+		<MT-records hidden id="MEs">
+			IMG	~	NAME	~	LINK
+			genevieve-dupre-crop.jpg	~	Genevieve Dupre	~	genevievetattoos.com
+			ivan-lopez-crop.jpg	~	Ivan Lopez	~	ilcolors.com
+			joey-armstrong-crop-1.jpg	~	Joey Armstrong	~	thunderhandtattoo.com	
+		</MT-records>
+		
+	</MT-recordsets>
+	
+	
+</html>
