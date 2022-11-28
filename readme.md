@@ -10,6 +10,7 @@ A lightweight, robust HTML node-layout templating system. Designed to minimize e
  - Built using vanilla Javascript. No library or framework needed. Extremely lightweight Javascript. 
  - HTML layouts can be mixed and switched with the same ease as CSS styles, as long as the fields match up. 
  - Data-placeholders can be anywhere in the template's HTML, including element metadata. 
+ - Clean, resilient code. 
 
 ## Operation
 
