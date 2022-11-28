@@ -1,6 +1,6 @@
 window.onload = function Merge_Templates() {
 	// get insertion-point containers for merged HTML (has a template attribute)
-	const containers = document.querySelectorAll("[template]");
+	const containers = document.querySelectorAll("[template-j]");
 
 	// loop and render containers
 	containers.forEach((container) => {
@@ -20,7 +20,7 @@ window.onload = function Merge_Templates() {
 
 function getTemplateHTML(container) {
 	// get template html
-	const templateName = container.getAttribute("template");
+	const templateName = container.getAttribute("template-j");
 	const template = document.querySelector(`template#${templateName}`);
 	return template.innerHTML;
 }
@@ -28,6 +28,7 @@ function getTemplateHTML(container) {
 function getData(container) {
 	// return headers and records as arrays
 	const rawData = getRawData(container);
+	
 	// field-delimiter is tilde surrounded by 0 or more spaces or tabs
 	const sDelim = /[ \t]*\~[ \t]*/g;
 	const [headers, headersEnd] = getHeaders(rawData, sDelim);
@@ -37,8 +38,8 @@ function getData(container) {
 
 function getRawData(container) {
 	// get raw data
-	const dataID = container.getAttribute("records");
-	const dataElement = document.querySelector(`records#${dataID}`);
+	const dataID = container.getAttribute("records-j");
+	const dataElement = document.querySelector(`records-j#${dataID}`);
 	const rawData = dataElement.innerHTML.trim();
 	return rawData;
 }
