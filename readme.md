@@ -9,7 +9,7 @@ A lightweight, robust HTML node-layout templating system. Designed to minimize e
  - No database needed. 
  - Built using vanilla Javascript. No library or framework needed. Extremely lightweight Javascript. 
  - HTML layouts can be mixed and switched with the same ease as CSS styles, as long as the fields match up. 
- - Data-placeholders can be anywhere in the template's HTML, including element metadata. So, for example, you can use a template-variable for the `src` of an `<img>`: `<img src = [[IMAGE-DATA]] alt = "">`
+ - Data-placeholders can be anywhere in the template's HTML, including element metadata. 
 
 ## Operation
 
@@ -37,7 +37,7 @@ The insertion point in the webpage for the rendered merge. Container attributes 
 
 ## Template
 
-Arbitrary, user-defined HTML structure to be repeated for each record. Contains field-placeholders which get automatically loaded with data from Records. Placeholders are indicated with double-brackets `[[MyField]]`. 
+Arbitrary, user-defined HTML structure to be repeated for each record. Contains field-placeholders which get automatically loaded with data from Records. Placeholders are indicated with double-brackets `[[MyField]]`. You can use template-variable for anything: tags, attributes, content, etc. For example, as the `src` of an `<img>`: `<img src = [[IMAGE-DATA]] alt = "">`
 
 ```
 <template id="artist">
