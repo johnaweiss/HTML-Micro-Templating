@@ -6,6 +6,11 @@
 	text-align: center;
 }
 
+H3{
+	margin: 50px;
+	font-family: Tahoma;
+}
+
 .title{
 	font-size: 24px;
 }
