@@ -1,3 +1,7 @@
+/* This templating system doesn't require any styles to work. 
+   These styles demonstrate styling of templated items. 
+   (It's normal). */
+
 * {
 	text-align: center;
 }
