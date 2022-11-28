@@ -5,6 +5,8 @@
 .engineers {
 	display: flex;
 	flex-wrap: wrap;
+	align-items: center;
+	justify-content: center;
 }
 
 .engineer {
@@ -31,6 +33,7 @@
 	border: solid;
 	padding: 5px;
 	margin-bottom: 40px;
+	font-weight: bold;
 }
 
 .artists {
@@ -38,6 +41,8 @@
 	flex-wrap: wrap;
 	font-family: arial;
 	font-weight: bold;
+	align-items: center;
+	justify-content: center;
 }
 
 .artist {
@@ -49,6 +54,7 @@
 }
 
 .artist .caption {
-	margin-bottom: 40px;
 	color: green;
+	width: 100px;
+	border: solid;
 }
