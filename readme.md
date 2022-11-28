@@ -31,9 +31,9 @@ It operates like a mailmerge. The record-list gets merged with the HTML template
 
 ## Container
 
-The insertion point in the rendered page for the rendered merge. Indicates the template and records to merge. 
+The insertion point in the webpage for the rendered merge. Container attributes indicate the ID's of the template and recordset to merge. 
 
-`<span records="EEs" template="engineer" class="engineers"></span>`
+`<span MT-records="EEs" MT-template="engineer" class="engineers"></span>`
 
 ## Template
 
@@ -55,12 +55,12 @@ Arbitrary, user-defined HTML structure to be repeated for each record. Contains 
 A simple newline-delimited list. Fieldnames are stated only once, on the first row. Leading spaces/tabs are ignored. Uses a simple tilde `~` field-delimiter, so no conflict with commas in the data, no escape characters needed. To simplify data-entry, it uses no brackets, braces, parens, or angles. Headers must match fieldnames in the template. 
 
 ```
-<records hidden id="sculptors">
+<MT-records hidden id="sculptors">
 	NAME~IMG~LINK
 	Orlie Kapitulnik~orliek-crop-2.jpg~orliek.com
 	Khang Le Schoenthal~khang.jpg~khangle.webflow.io
 	Ivan Lopez~ivan-lopez-crop.jpg~ilcolors.com
 	Genevieve Dupre~genevieve-dupre-crop.jpg~genevievetattoos.com
 	Joey Armstrong~joey-armstrong-crop-1.jpg~thunderhandtattoo.com
-</records>
+</MT-records>
 ```
