@@ -6,7 +6,7 @@ A lightweight, robust HTML node-layout templating system. Designed to minimize e
  - There's just one copy of the HTML layout to edit. 
  - Content admins never need to touch the HTML of the node-series. They just edit a plain-text list of records. 
  - All dynamic assets can be contained within a single HTML file. 
- - Optionally, for safer content-management, data can be stored in a separate file. Requires PHP. 
+ - Optionally, for safer content-management, data can be stored in a separate file. (Requires PHP.)
  - No database needed. 
  - Built using vanilla Javascript. No library or framework needed. Extremely lightweight Javascript. 
  - HTML layouts can be mixed and switched with the same ease as CSS styles, as long as the fields match up. 
