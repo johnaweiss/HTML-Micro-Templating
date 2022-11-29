@@ -76,7 +76,7 @@ Arbitrary, user-defined HTML structure to be repeated for each record. Contains 
 
 ## Records
 
-A simple newline-delimited list. Fieldnames are stated only once, on the first row. Uses a single tilde `~` field-delimiter, so no conflict with commas in the data, no escape characters needed. To simplify data-entry, it uses no brackets, braces, parens, single-quotes, double-quotes, or angles -- unless it's part of your data. Headers must match fieldnames in the template. Whitespace surrounding the field-delimiter is ignored. 
+A simple newline-delimited list. Fieldnames are stated only once, on the first row. Uses a single tilde `~` field-delimiter, so no conflict with commas in the data, no escape characters needed. To simplify data-entry, it uses no brackets, braces, parens, single-quotes, double-quotes, or angles -- unless it's part of your data. Headers must match fieldnames in the template. Whitespace surrounding the field-delimiter isn't required, and will be ignored. 
 
 ```
 <MT-records hidden id="sculptors">
