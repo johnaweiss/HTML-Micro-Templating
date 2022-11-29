@@ -28,8 +28,8 @@ It operates like a mailmerge. The record-list gets merged with the HTML template
 
 These are the elements that must appear on the webpage: 
 
- - **Container:** The insertion point in the rendered page for the rendered merge.
- - **Template:** HTML structure to be repeated for each record. 
+ - **Container:** The insertion point in the rendered page for the clones.
+ - **Template:** HTML structure to be repeated for each clone. 
  - **Records:** A simple newline-delimited list. 
 
 ### *Files*
