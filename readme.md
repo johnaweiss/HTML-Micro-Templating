@@ -14,7 +14,7 @@ A lightweight, robust HTML node-layout templating system. It enables HTML progra
  - No database needed. 
  - Built using vanilla Javascript. No library or framework needed. Extremely lightweight Javascript. 
  - HTML templates and data can be mixed and switched with the same ease as CSS styles, as long as the fields match up. 
- - Data-placeholders can be anywhere in the template's HTML, including element metadata. 
+ - Variable data can be inserted anywhere in the template's HTML, including element metadata. 
  - Clean, resilient code. 
 
 ## Operation
