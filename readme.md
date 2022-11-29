@@ -31,7 +31,7 @@ These are the elements that must appear on the webpage:
  - **Records:** A simple newline-delimited list. 
 
 **Files**
- - **microtemplate.js**: The only file needed to use the system. 
+ - **microtemplate.js**: Contains all needed Javascript. 
  - **index.html**: A workking example of how to use the system, showing proper structure of Containers, Templates, and Records. 
  - **style.css**: *Not needed for this system to work.* Demonstrates normal stying on the merged render. 
  - **records.html**: Optionally, records can be stored in a separate file instead of on the webpage. 
