@@ -40,7 +40,7 @@ https://replit.com/@johnaweiss/Micro-Template-Demo?v=1
 
 ## Container
 
-The insertion point in the webpage for the rendered merge. Container attributes are used to set the ID's of the template and recordset to merge. We use "MT-" prefix for all custom HTML tags and attributes. 
+The insertion point in the webpage for the rendered merge. Container attributes are used to set the ID's of the template and recordset to merge. We use "MT-" prefix for all custom HTML tags and attributes. The class of the container will get applied to all the clones. 
 
 `<span MT-records="EEs" MT-template="engineer" class="engineers"></span>`
 
