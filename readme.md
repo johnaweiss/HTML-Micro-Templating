@@ -21,17 +21,11 @@ This system *isn't* for templating an entire website or webpage. It's for repeat
  - Variable data can be inserted anywhere in the template's HTML, including element metadata. 
  - Clean, resilient code. 
 
+https://replit.com/@johnaweiss/Micro-Template-Demo?v=1
+
 ## Operation
 
 It operates like a mailmerge. The record-list gets merged with the HTML template, outputting rendered HTML for all records. That gets written to the webpage. 
-
-### *HTML elements*
-
-These are the elements that must appear on the webpage: 
-
- - **Container:** The insertion point in the rendered page for the clones.
- - **Template:** HTML structure to be repeated for each clone. 
- - **Records:** A simple newline-delimited list. 
 
 ### *Files*
 
@@ -40,10 +34,16 @@ Required files:
  - **YourWebPage.html**: Contains Containers, Templates, and Records. The attached index.html is a working example of how to use the system. 
 
 Optional files:
- - **style.css**: *Not needed for this system to work.* The attached style.css demonstrates normal stying of the clones. 
+ - **style.css**: *Not needed for this system to work.* The attached style.css demonstrates normal styling of the clones. 
  - **records.html**: Optionally, records can be stored in a separate file instead of on the webpage. 
 
-https://replit.com/@johnaweiss/Micro-Template-Demo?v=1
+### *HTML elements*
+
+These are the elements that must appear on the webpage: 
+
+ - **Container:** The insertion point in the rendered page for the clones.
+ - **Template:** HTML structure to be repeated for each clone. 
+ - **Records:** A simple newline-delimited list. 
 
 ## Container
 
