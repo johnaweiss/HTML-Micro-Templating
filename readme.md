@@ -10,7 +10,7 @@ This system *isn't* for templating an entire website or webpage. It's for repeat
 ## Benefits
 
  - There's just one copy of the HTML layout to edit. 
- - Content admins never need to touch the HTML of the node-series. They just edit a plain-text list of records. 
+ - Content admin never touches the HTML directly. 
  - Data is a simple delimited list. No special string-handling, no escape-codes, or no redundant fieldames. 
  - All dynamic assets can be contained within a single HTML file. 
  - Supports any number of templates, datasets, and insertion-points on the same webpage. 
