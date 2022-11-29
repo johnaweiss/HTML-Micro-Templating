@@ -13,7 +13,7 @@ A lightweight, robust HTML node-layout templating system. It enables HTML progra
  - Optionally, for safer content-management, data can be stored in a separate file. (Requires PHP.)
  - No database needed. 
  - Built using vanilla Javascript. No library or framework needed. Extremely lightweight Javascript. 
- - HTML templates and data can be mixed and switched with the same ease as CSS styles, as long as the fields match up. 
+ - HTML templates and data can be mixed and switched on the same webpage with the same ease as CSS styles, as long as the fields match up. 
  - Variable data can be inserted anywhere in the template's HTML, including element metadata. 
  - Clean, resilient code. 
 
