@@ -20,7 +20,7 @@ A lightweight, robust HTML node-layout templating system. It enables HTML progra
 
 ## Operation
 
-It operates like a mailmerge. The record-list gets merged with the HTML template, and rendered HTML for all records is written to the webpage. 
+It operates like a mailmerge. The record-list gets merged with the HTML template, outputting rendered HTML for all records. That gets written to the webpage. 
 
 **HTML elements**
 
