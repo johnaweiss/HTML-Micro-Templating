@@ -1,7 +1,7 @@
 # HTML Node Templating System
 ---------------------------
 
-A lightweight, robust HTML node-layout templating system. It enables HTML programmer to more easily control the layout of an arbitrary number of identical HTML sibling nodes, each containing different data, pulled from a hidden table. Designed to minimize effort and reduce keystrokes for the HTML programmer, and protect live HTML from content admins. 
+A lightweight, robust HTML node-layout templating system. It enables an HTML programmer to more easily control the layout of a series of identical HTML sibling-nodes, each containing different content. The layout is edited in just one place, so you can edit ten's or hundreds of clones at the same time. It's easier to update the conent, because it's separate from the HTML. The data can be stored right inside the webpage, or in an external flat file. No database required. Micro Template is designed to minimize effort and reduce keystrokes for the HTML programmer, and protect live HTML from content admin. In-page storage is especially handy when you have only a few items which change rarely, and a database would be overkill. 
 
 ![Sample layout](https://dsm04pap002files.storage.live.com/y4mFDRTizIWm9MUkVhvF5Eb13qkch_IfHPCCvHMXSk3-zjY53TPQkm1C6QfHU-ZQ1YwANtlQ7p5ijEckYsR_DdXJF7rjZZiKBS2sCgL7Mbmf688liylf9bLulJgsb3OqZ4g4TxO6u0n5AH1b6BY4T69BPNe8UWmQtK1wACRcRbPrBfj_FCKCB8NLZP_tKMPw5di?width=466&height=251&cropmode=none)
 
@@ -16,6 +16,7 @@ This system *isn't* for templating an entire website or webpage. It's for repeat
  - Supports any number of templates, datasets, and insertion-points on the same webpage. 
  - Optionally, for safer content-management, data can be stored in a separate file from the webpage. (Requires PHP.)
  - No database needed. 
+ - A compatible database-export could be generated without too much trouble. 
  - Built using vanilla Javascript. No library or framework needed. Extremely lightweight Javascript. 
  - HTML templates and data can be mixed and switched on the same webpage with the same ease as CSS styles, as long as the fields match up. 
  - Variable data can be inserted anywhere in the template's HTML, including element metadata. 
