@@ -29,7 +29,7 @@ It operates like a mailmerge. The record-list gets merged with the HTML template
 
 **Files**
  - **microtemplate.js**: The only file needed to use the system. 
- - **index.html**: Demonstrates proper layout of the Template, Records, and Container. 
+ - **index.html**: Demonstrates proper structure of Containers, Templates, and Records. 
  - **style.css**: *Not needed for this system to work.* Demonstrates normal stying on the merged render. 
  - **records.html**: Optionally, records can be stored in a separate file. 
 
