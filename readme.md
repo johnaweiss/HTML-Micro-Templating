@@ -11,7 +11,7 @@ A lightweight, robust HTML node-layout templating system. It enables HTML progra
  - Content admins never need to touch the HTML of the node-series. They just edit a plain-text list of records. 
  - All dynamic assets can be contained within a single HTML file. 
  - Supports any number of templates, datasets, and insertion-points on the same webpage. 
- - Optionally, for safer content-management, data can be stored in a separate file. (Requires PHP.)
+ - Optionally, for safer content-management, data can be stored in a separate file from the webpage. (Requires PHP.)
  - No database needed. 
  - Built using vanilla Javascript. No library or framework needed. Extremely lightweight Javascript. 
  - HTML templates and data can be mixed and switched on the same webpage with the same ease as CSS styles, as long as the fields match up. 
