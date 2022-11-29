@@ -1,7 +1,7 @@
 # HTML Node Templating System
 ---------------------------
 
-A lightweight, robust HTML node-layout templating system. It enables HTML programmer to more easily control the layout of an arbitrary number of identical HTML sibling nodes, each containing different data. Designed to minimize effort and reduce keystrokes for the HTML programmer, and protect live HTML from content admins. 
+A lightweight, robust HTML node-layout templating system. It enables HTML programmer to more easily control the layout of an arbitrary number of identical HTML sibling nodes, each containing different data, pulled from a hidden table. Designed to minimize effort and reduce keystrokes for the HTML programmer, and protect live HTML from content admins. 
 
 ![Sample layout](https://dsm04pap002files.storage.live.com/y4mFDRTizIWm9MUkVhvF5Eb13qkch_IfHPCCvHMXSk3-zjY53TPQkm1C6QfHU-ZQ1YwANtlQ7p5ijEckYsR_DdXJF7rjZZiKBS2sCgL7Mbmf688liylf9bLulJgsb3OqZ4g4TxO6u0n5AH1b6BY4T69BPNe8UWmQtK1wACRcRbPrBfj_FCKCB8NLZP_tKMPw5di?width=466&height=251&cropmode=none)
 
