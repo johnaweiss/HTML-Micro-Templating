@@ -11,6 +11,7 @@ This system *isn't* for templating an entire website or webpage. It's for repeat
 
  - There's just one copy of the HTML layout to edit. 
  - Content admins never need to touch the HTML of the node-series. They just edit a plain-text list of records. 
+ - Data is a simple delimited list. No special string-handling, no escape-codes, or no redundant fieldames. 
  - All dynamic assets can be contained within a single HTML file. 
  - Supports any number of templates, datasets, and insertion-points on the same webpage. 
  - Optionally, for safer content-management, data can be stored in a separate file from the webpage. (Requires PHP.)
