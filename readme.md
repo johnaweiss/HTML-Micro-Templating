@@ -3,7 +3,7 @@
 
 A robust, lightweight system which puts node templating in the hands of the HTML developer. It enables the dev to easily control the layout of a long series of identical HTML sibling-nodes, each containing different content. 
 
-Micro Template is designed to minimize effort and reduce keystrokes for the HTML programmer, and protect HTML from content admin. 
+Micro Template is designed to minimize effort and reduce keystrokes for the HTML programmer, and protect HTML from content updates. 
 
 The layout of all the clones is edited in one place, so it's easy to edit ten's or hundreds of clones at the same time. 
 
