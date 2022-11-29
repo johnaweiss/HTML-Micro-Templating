@@ -39,7 +39,8 @@ The insertion point in the webpage for the rendered merge. Container attributes 
 
 ## Template
 
-Arbitrary, user-defined HTML structure to be repeated for each record. Contains field-placeholders which get automatically loaded with data from Records. Placeholders are indicated with double-brackets `[[MyField]]`. You can use template-variable for anything: tags, attributes, content, etc. For example, as the `src` of an `<img>`: `<img src = [[IMAGE-DATA]] alt = "">`
+Arbitrary, user-defined HTML structure to be repeated for each record. Contains field-placeholders which get automatically loaded with data from Records. Placeholders are indicated with double-brackets `[[MyField]]`. You can use template-variable for anything: tags, attributes, content, etc. For example, as the source of an image
+`<img src = [[IMAGE-DATA]] alt = "">`
 
 ```
 <template id="artist">
