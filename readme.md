@@ -24,7 +24,7 @@ This system *isn't* for templating an entire website or webpage. It's for repeat
 
 It operates like a mailmerge. The record-list gets merged with the HTML template, outputting rendered HTML for all records. That gets written to the webpage. 
 
-**HTML elements**
+### HTML elements
 
 These are the elements that must appear on the webpage: 
 
@@ -32,7 +32,7 @@ These are the elements that must appear on the webpage:
  - **Template:** HTML structure to be repeated for each record. 
  - **Records:** A simple newline-delimited list. 
 
-**Files**
+### Files
  - **microtemplate.js**: Contains all needed Javascript. 
  - **index.html**: A workking example of how to use the system, showing proper structure of Containers, Templates, and Records. 
  - **style.css**: *Not needed for this system to work.* Demonstrates normal stying on the merged render. 
