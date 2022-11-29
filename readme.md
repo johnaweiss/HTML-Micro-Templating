@@ -40,7 +40,7 @@ Required files:
  - **YourWebPage.html**: Contains Containers, Templates, and Records. The attached index.html is a working example of how to use the system. 
 
 Optional files:
- - **style.css**: *Not needed for this system to work.* The attached style.css emonstrates normal stying on the clones. 
+ - **style.css**: *Not needed for this system to work.* The attached style.css demonstrates normal stying of the clones. 
  - **records.html**: Optionally, records can be stored in a separate file instead of on the webpage. 
 
 https://replit.com/@johnaweiss/Micro-Template-Demo?v=1
