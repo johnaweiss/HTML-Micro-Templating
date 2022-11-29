@@ -55,15 +55,15 @@ Arbitrary, user-defined HTML structure to be repeated for each record. Contains 
 
 ## Records
 
-A simple newline-delimited list. Fieldnames are stated only once, on the first row. Leading spaces/tabs are ignored. Uses a simple tilde `~` field-delimiter, so no conflict with commas in the data, no escape characters needed. To simplify data-entry, it uses no brackets, braces, parens, or angles. Headers must match fieldnames in the template. 
+A simple newline-delimited list. Fieldnames are stated only once, on the first row. Leading spaces/tabs are ignored. Uses a simple tilde `~` field-delimiter, so no conflict with commas in the data, no escape characters needed. To simplify data-entry, it uses no brackets, braces, parens, or angles. Headers must match fieldnames in the template. Whitespace surrounding the field-delimiter is ignored. 
 
 ```
 <MT-records hidden id="sculptors">
-	NAME~IMG~LINK
-	Orlie Kapitulnik~orliek-crop-2.jpg~orliek.com
-	Khang Le Schoenthal~khang.jpg~khangle.webflow.io
-	Ivan Lopez~ivan-lopez-crop.jpg~ilcolors.com
-	Genevieve Dupre~genevieve-dupre-crop.jpg~genevievetattoos.com
-	Joey Armstrong~joey-armstrong-crop-1.jpg~thunderhandtattoo.com
+	NAME	~	IMG	~	LINK
+	Orlie Kapitulnik	~	orliek-crop-2.jpg	~	orliek.com
+	Khang Le Schoenthal	~	khang.jpg	~	khangle.webflow.io
+	Ivan Lopez	~	ivan-lopez-crop.jpg	~	ilcolors.com
+	Genevieve Dupre	~	genevieve-dupre-crop.jpg	~	genevievetattoos.com
+	Joey Armstrong	~	joey-armstrong-crop-1.jpg	~	thunderhandtattoo.com
 </MT-records>
 ```
