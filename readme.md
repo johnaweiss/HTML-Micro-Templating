@@ -1,7 +1,7 @@
 # HTML Node Templating System
 ---------------------------
 
-A lightweight, robust HTML node-layout templating system. Designed to minimize effort and reduce keystrokes for the HTML programmer, and protect live HTML from content admins. It enables HTML programmer to more easily control the layout of an arbitrary series of identical HTML nodes, each containing different data. 
+A lightweight, robust HTML node-layout templating system. It enables HTML programmer to more easily control the layout of an arbitrary series of identical HTML nodes, each containing different data. Designed to minimize effort and reduce keystrokes for the HTML programmer, and protect live HTML from content admins. 
 
  - There's just one copy of the HTML layout to edit. 
  - Content admins never need to touch the HTML of the node-series. They just edit a plain-text list of records. 
