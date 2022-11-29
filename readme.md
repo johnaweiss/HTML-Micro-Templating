@@ -1,4 +1,4 @@
-# HTML Micro Templating System
+# HTML Node Templating System
 ---------------------------
 
 A lightweight, robust HTML node-layout templating system. Designed to minimize effort and reduce keystrokes for the HTML programmer, and protect live HTML from content admins. It enables HTML programmer to more easily control the layout of an arbitrary series of identical HTML nodes, each containing different data. 
