@@ -34,7 +34,7 @@ https://replit.com/@johnaweiss/Micro-Template-Demo?v=1
 
 It operates like a mailmerge. The record-list gets merged with the HTML template, outputting rendered HTML for all records. That gets written to the webpage. 
 
-### *Files*
+## Files
 
 Required files:
  - **microtemplate.js**: Contains all needed Javascript. 
@@ -44,7 +44,7 @@ Optional files:
  - **style.css**: *Not needed for this system to work.* The attached style.css demonstrates normal styling of the clones. 
  - **records.html**: Optionally, records can be stored in a separate file instead of on the webpage. 
 
-### *HTML elements*
+## HTML elements
 
 These are the elements that must appear on the webpage: 
 
