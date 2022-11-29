@@ -23,6 +23,8 @@ It operates like a mailmerge. The record-list gets merged with the HTML template
 
 **HTML elements**
 
+These are the elements that must appear on the webpage: 
+
  - **Container:** The insertion point in the rendered page for the rendered merge.
  - **Template:** HTML structure to be repeated for each record. 
  - **Records:** A simple newline-delimited list. 
@@ -31,7 +33,7 @@ It operates like a mailmerge. The record-list gets merged with the HTML template
  - **microtemplate.js**: The only file needed to use the system. 
  - **index.html**: A workking example of how to use the system, showing proper structure of Containers, Templates, and Records. 
  - **style.css**: *Not needed for this system to work.* Demonstrates normal stying on the merged render. 
- - **records.html**: Optionally, records can be stored in a separate file. 
+ - **records.html**: Optionally, records can be stored in a separate file instead of on the webpage. 
 
 https://replit.com/@johnaweiss/Micro-Template-Demo?v=1
 
