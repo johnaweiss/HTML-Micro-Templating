@@ -1,22 +1,36 @@
 # HTML Templating System
 ---------------------------
 
-A robust, lightweight system which puts node templating in the hands of the HTML developer. It enables the dev to easily control the layout of a long series of identical HTML sibling-nodes, each containing different content. 
+A robust, lightweight system which puts node templating in the hands of the HTML developer. It enables the HTML dev to easily control the layout of a long series of identical HTML sibling-nodes, each containing different content. 
+
+## Applications, or "Shouldn't templating be done server-side?"
+This tool isn't trying to replace server-side templating. For sure, in any complex system with many tables and sub-templates, server-side templating is the way to go. 
+
+But often, server-side templating is overkill or unobtainable:
+ - on small projects
+ - websites that lack server access
+ - pages with a small number of rarely changing data-records, with relatively few fields
+ - when the web-developer lacks server-side programming skills. 
+ - when you're _going_ to have a database in the future (when the database team finally launches it), but you don't quite have it yet and you need to get that website up asap. 
+
+In those scenarios, client-side templating can be a very useful option, or the only option. 
+
+## Design
 
 Micro Template is designed to minimize effort and reduce keystrokes for the HTML programmer, and protect HTML from content updates. 
 
 The layout of all the clones is edited in one place, so it's easy to edit ten's or hundreds of clones at the same time. 
 
-It's easy to update the content separately from the HTML, because it is separate from the HTML. The data can be stored right inside the webpage, or in an external flat file. No database required. In-page storage is especially handy when you have only a few items which change rarely, and a database would be overkill. Or, when you're _going_ to have a database, but you don't quite have it yet and you need to get that website up asap. 
+It's easy to update the content separately from the HTML, because it is separate from the HTML. The data can be stored right inside the webpage, or in an external flat file. No database required. In-page storage is especially handy when you have only a few items which change rarely, and a database would be overkill. Or, 
 
 ![Sample layout](https://dsm04pap002files.storage.live.com/y4mFDRTizIWm9MUkVhvF5Eb13qkch_IfHPCCvHMXSk3-zjY53TPQkm1C6QfHU-ZQ1YwANtlQ7p5ijEckYsR_DdXJF7rjZZiKBS2sCgL7Mbmf688liylf9bLulJgsb3OqZ4g4TxO6u0n5AH1b6BY4T69BPNe8UWmQtK1wACRcRbPrBfj_FCKCB8NLZP_tKMPw5di?width=466&height=251&cropmode=none)
 
-This system *isn't* for templating an entire website or webpage. It's for repeated HTML nodes within a page. 
+This system *isn't* for templating an entire website or webpage. It's for repeated HTML nodes *within* a page. 
 
 ## Benefits
 
  - There's just one copy of the HTML layout to edit. 
- - Content admin never touches the HTML directly. 
+ - Content can be edited without touching the HTML. 
  - Data is a simple delimited list. No special string-handling, no escape-codes, or no redundant fieldames. 
  - All dynamic assets can be contained within a single HTML file. 
  - Supports any number of templates, datasets, and insertion-points on the same webpage. 
@@ -76,7 +90,37 @@ Arbitrary, user-defined HTML structure to be repeated for each record. Contains 
 
 ## Records
 
-A simple newline-delimited list. Fieldnames are stated only once, on the first row. Uses a single tilde `~` field-delimiter, so no conflict with commas in the data, no escape characters needed. To simplify data-entry, it uses no brackets, braces, parens, single-quotes, double-quotes, or angles -- unless it's part of your data. Headers must match fieldnames in the template. Whitespace surrounding the field-delimiter isn't required, and will be ignored. 
+A simple newline-delimited list. The field delimiter is one newline character. The record delimiter is two newline characters. This layout was chosen for visual clarity: every field clearly starts on a newline, instead of being buried somewhere in a contnuous block of text. Fieldnames are stated only once, on the first row. Uses a single newline field-delimiter, so no conflict with commas in the data, no escape characters needed. To simplify data-entry, it uses no brackets, braces, parens, single-quotes, double-quotes, or angles -- unless it's part of your data. Whitespace surrounding the field-delimiter isn't required, and will be ignored. Headers must match fieldnames in the template. 
+
+```
+<MT-records hidden id="sculptors">
+	NAME
+	IMG
+	LINK
+	
+	Orlie Kapitulnik
+	orliek-crop-2.jpg
+	orliek.com
+	
+	Khang Le Schoenthal
+	khang.jpg
+	khangle.webflow.io
+	
+	Ivan Lopez
+	ivan-lopez-crop.jpg
+	ilcolors.com
+	
+	Genevieve Dupre
+	genevieve-dupre-crop.jpg
+	genevievetattoos.com
+	
+	Joey Armstrong
+	joey-armstrong-crop-1.jpg
+	thunderhandtattoo.com
+</MT-records>
+```
+
+NOTE: The current release is still based on my previous format, and won't yet work with the above format. Here's the current format in the current release. You can clearly see the above newline-field-delimiter offers easier manual editing. 
 
 ```
 <MT-records hidden id="sculptors">
