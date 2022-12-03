@@ -90,37 +90,49 @@ Arbitrary, user-defined HTML structure to be repeated for each record. Contains 
 
 ## Records
 
-A simple newline-delimited list. The field delimiter is one newline character. The record delimiter is two newline characters. This layout was chosen for visual clarity: every field clearly starts on a newline, instead of being buried somewhere in a contnuous block of text. Fieldnames are stated only once, on the first row. Uses a single newline field-delimiter, so no conflict with commas in the data, no escape characters needed. To simplify data-entry, it uses no brackets, braces, parens, single-quotes, double-quotes, or angles -- unless it's part of your data. Whitespace surrounding the field-delimiter isn't required, and will be ignored. Headers must match fieldnames in the template. 
+A simple newline-delimited list. The field delimiter is one newline character. The record delimiter is two or more newline characters (so you can add several extra empty newlines betweeen records for visual clarity, if desired). This layout was chosen for visual clarity: every field clearly starts on a newline, instead of being buried somewhere in a contnuous block of text. Fieldnames are stated only once, on the first row. Uses a newline field-delimiter. There's no character field-delimiter, so no characters are off-limits, eg no conflict with commas in the data, no escape characters needed. To simplify data-entry, it uses no brackets, braces, parens, single-quotes, double-quotes, or angles -- unless it's part of your data. Whitespace surrounding the field-delimiter isn't required, and will be ignored. Headers must match fieldnames in the template. Indents (tabs or spaces) are ignored. 
 
 ```
 <MT-records hidden id="sculptors">
 	NAME
 	IMG
 	LINK
+	LONG-VALUE
+	
 	
 	Orlie Kapitulnik
 	orliek-crop-2.jpg
 	orliek.com
+	Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, and going through the cites of the word in classical literature, discovered the undoubtable source. Lorem Ipsum comes from sections 1.10.32 and 1.10.33 of "de Finibus Bonorum et Malorum" (The Extremes of Good and Evil) by Cicero, written in 45 BC. This book is a treatise on the theory of ethics, very popular during the Renaissance. The first line of Lorem Ipsum, "Lorem ipsum dolor sit amet..", comes from a line in section 1.10.32.
+	
 	
 	Khang Le Schoenthal
 	khang.jpg
 	khangle.webflow.io
+	There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. If you are going to use a passage of Lorem Ipsum, you need to be sure there isn't anything embarrassing hidden in the middle of text. All the Lorem Ipsum generators on the Internet tend to repeat predefined chunks as necessary, making this the first true generator on the Internet. It uses a dictionary of over 200 Latin words, combined with a handful of model sentence structures, to generate Lorem Ipsum which looks reasonable. The generated Lorem Ipsum is therefore always free from repetition, injected humour, or non-characteristic words etc.
+	
 	
 	Ivan Lopez
 	ivan-lopez-crop.jpg
 	ilcolors.com
+	It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web sites still in their infancy. Various versions have evolved over the years, sometimes by accident, sometimes on purpose (injected humour and the like).
+	
 	
 	Genevieve Dupre
 	genevieve-dupre-crop.jpg
 	genevievetattoos.com
+	Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+
 	
 	Joey Armstrong
 	joey-armstrong-crop-1.jpg
 	thunderhandtattoo.com
+	The standard chunk of Lorem Ipsum used since the 1500s is reproduced below for those interested. Sections 1.10.32 and 1.10.33 from "de Finibus Bonorum et Malorum" by Cicero are also reproduced in their exact original form, accompanied by English versions from the 1914 translation by H. Rackham.
+
 </MT-records>
 ```
 
-NOTE: The current release is still based on my previous format, and won't yet work with the above format. Here's the current format in the current release. You can clearly see the above newline-field-delimiter offers easier manual editing. 
+**NOTE: The current release is still based on my previous format, and won't yet work with the above format. Here's the current format in the current release. You can clearly see the above newline-field-delimiter offers easier manual editing. **
 
 ```
 <MT-records hidden id="sculptors">
