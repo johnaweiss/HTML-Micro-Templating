@@ -1,67 +1,118 @@
+// MT HTML PREFIXES (reserved attributes needed to support metadata in containers)
+const gAppPref = "mt-";
+
+// RECORD DELIMITERS REGEX (new-field, new-record)
+const gFldDelim = /(?:\n[ \t]*)(?=\w)/g;
+const gRecDelim = /(?:\n[ \t]*){2,}(?=\w)/g;
+
+
 window.onload = function Merge_Templates() {
 	// get insertion-point containers for merged HTML (has a template attribute)
-	const containers = document.querySelectorAll("[MT-template]");
-
+	containers = document.querySelectorAll("[" + gAppPref + "header]");
 	// loop and render containers
 	containers.forEach((container) => {
-		// get template
-		const templateHTML = getTemplateHTML(container);
-
-		// get data
-		[headers, records] = getData(container);
-
-		// merge data to template to get rendered HTML
-		const mergeHTML = mergeRecords(headers, records, templateHTML);
-
-		// append merged-HTML to container
-		container.innerHTML = mergeHTML;
+		// load header
+		loadHeader(container);
+	});
+	
+	containers = document.querySelectorAll("[" + gAppPref + "template]");
+	// loop and render containers
+	containers.forEach((container) => {
+		// merge records into template
+		loadMerge(container);
 	});
 };
 
+
+function loadHeader(container) {
+	// get metadata string. CONTAINS KEYS AND VALUES
+	const sMetas = container.getAttribute(gAppPref + "meta").trim();
+	const objMetas = strToObj(sMetas, gFldDelim);
+	
+	// get header-template
+	const headerID = container.getAttribute(gAppPref + "header");
+	const header = document.querySelector(`template#${headerID}`);
+	let headerHTML = header.innerHTML;
+
+	// merge
+	for (const key in objMetas) {
+		let val = objMetas[key].trim();
+		let place = `[[${key}]]`;
+		headerHTML = headerHTML.replaceAll(place, val);
+	}
+
+	// append to container
+	container.innerHTML += headerHTML;
+}
+
+
+function loadMerge(container) {
+	// get data
+	[headers, records] = getData(container);
+
+	// get template
+	const templateHTML = getTemplateHTML(container);
+	// console.log(templateHTML);
+
+	// merge
+	const mergeHTML = mergeRecords(headers, records, templateHTML);
+
+	// append merged-HTML to container
+	container.innerHTML += mergeHTML;
+}
+
+
 function getTemplateHTML(container) {
 	// get template html
-	const templateName = container.getAttribute("MT-template");
-	const template = document.querySelector(`template#${templateName}`);
+	const templateID = container.getAttribute(gAppPref + "template");
+	const template = document.querySelector(`template#${templateID}`);
 	return template.innerHTML;
 }
+
 
 function getData(container) {
 	// return headers and records as arrays
 	const rawData = getRawData(container);
-	
-	// field-delimiter is tilde surrounded by 0 or more spaces or tabs
-	const sDelim = /[ \t]*\~[ \t]*/g;
-	const [headers, headersEnd] = getHeaders(rawData, sDelim);
-	const records = getRecords(rawData, headersEnd, sDelim);
+
+	const [headers, headersEnd] = getHeaders(rawData, gFldDelim);
+
+	const records = getRecords(rawData, headersEnd, gFldDelim);
+
 	return [headers, records];
 }
 
 function getRawData(container) {
-	// get raw data
-	const dataID = container.getAttribute("MT-records");
-	const dataElement = document.querySelector(`MT-records#${dataID}`);
+	// get mt-records id
+	const dataID = container.getAttribute(gAppPref + "records");
+
+	// get records element
+	const dataElement = document.querySelector(`${gAppPref}records#${dataID}`);
+	console.log("selector: " + `${gAppPref}records#${dataID}`);
+
+	// get records contents
 	const rawData = dataElement.innerHTML.trim();
 	return rawData;
 }
 
-function getHeaders(rawData, sDelim) {
+function getHeaders(rawData) {
 	// load headers into array
-	const headersEnd = rawData.indexOf("\n");
-	const headers = rawData.slice(0, headersEnd).split(sDelim);
+	const headersEnd = rawData.search(gRecDelim);
+	// console.log("end: " + headersEnd);
+	const headers = rawData.slice(0, headersEnd).split(gFldDelim);
+	// console.log(headers);
 	return [headers, headersEnd];
 }
 
-function getRecords(rawData, headersEnd, sDelim) {
+function getRecords(rawData, headersEnd) {
 	// load records into array, rows and columns
-	// reg exp: newline + 0 or more spaces or tabs
-	const sRegExp = /\n[ \t]*/g;
-	const aRows = rawData.slice(headersEnd).trim().split(sRegExp);
+	const aRows = rawData.slice(headersEnd).trim().split(gRecDelim);
 	const records = aRows.map((sRow) => {
-		return sRow.split(sDelim);
+		return sRow.split(gFldDelim);
 	});
 
 	return records;
 }
+
 
 function mergeRecords(headers, records, templateHTML) {
 	// make html for each record by merging with temlate
@@ -73,6 +124,7 @@ function mergeRecords(headers, records, templateHTML) {
 	});
 	return allRecordsHTML;
 }
+
 
 function mergeRecord(templateHTML, headers, record) {
 	let recordHTML = templateHTML;
@@ -87,4 +139,9 @@ function mergeRecord(templateHTML, headers, record) {
 		recordHTML = recordHTML.replaceAll(placeholder, value);
 	});
 	return recordHTML
+}
+
+
+function strToObj(str, propDelim){
+	return Object.fromEntries(str.split(propDelim).map(i => i.split(':')));
 }
