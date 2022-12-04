@@ -3,10 +3,10 @@ html, body {
   width: 100%;
 }
 
-.art-group {
+h1 {
 	text-align: center;
-	display:block;
 }
+
 
 .artists-header {
 	text-align: center;
@@ -14,8 +14,23 @@ html, body {
 }
 
 
+.art-group {
+	text-align: center;
+	display:block;
+}
+
+
+.art-group img {
+	width:200px;
+}
+
 .artist {
 	text-align: center;
 	display:block;
+}
+
+
+.artist img {
+	width:200px;
 }
 
