@@ -3,7 +3,7 @@
 
 A robust, lightweight system which puts node templating in the hands of the HTML developer. It enables the HTML dev to easily control the layout of a long series of identical HTML sibling-nodes, each containing different content. 
 
-## Applications, or "Shouldn't templating be done server-side?"
+## "Shouldn't templating be done server-side?"
 This tool isn't trying to replace server-side templating. For sure, in any complex system with many tables and sub-templates, server-side templating is the way to go. 
 
 But often, server-side templating is overkill or unobtainable:
@@ -56,7 +56,7 @@ Required files:
 
 Optional files:
  - **style.css**: *Not needed for this system to work.* The attached style.css demonstrates normal styling of the clones. 
- - **records.html**: Optionally, records can be stored in a separate file instead of on the webpage. 
+ - **records.html**: Optionally, records can be stored in a separate file instead of on the webpage. Requires php. 
 
 ## HTML elements
 
@@ -71,6 +71,27 @@ These are the elements that must appear on the webpage:
 The insertion point in the webpage for the rendered merge. Container attributes are used to set the ID's of the template and recordset to merge. We use "MT-" prefix for all custom HTML tags and attributes. The class of the container isn't required for Micro-Template operation. Its just for styling. 
 
 `<span MT-records="EEs" MT-template="engineer" class="engineers"></span>`
+
+## Grouping
+
+MT features grouping with metadata. This enables to create a header-template to display above each of multiple groups in the same container, based on the same template, each with a different dataset. For example: Artist template with groups: Sculptors, Painters. Dev can enter metadata into container to display in each group header. That metadata will get loaded into each group-header. 
+
+	<span  mt-template="artist" mt-records="sculptors" mt-header="artists-header" mt-meta="
+		TITLE: SCULPTORS
+		SUBTITLE:People Who Sculpt. We like them.
+		DESCRIPTION:How can you insert a whole paragraph here? We needs a table!
+		">
+	</span>
+
+
+	<span  mt-template="artist" mt-records="painters" mt-header="artists-header" mt-meta="
+		TITLE: PAINTERS
+		SUBTITLE:               Painters are out of their minds.
+		DESCRIPTION:Don't even ask.
+		"> 
+	</span>
+	
+Rendered:
 
 ## Template
 
