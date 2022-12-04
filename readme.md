@@ -158,7 +158,8 @@ http://jsont.squarespace.com/
 ### Comparison
 
 I haven't had a chance to compare yet. Comparison should look at:
- - **Ease of HTML coding**: Simplity, visual clarity, similarity to statid HTML, validation
+ - **Ease of template coding**: Simplity, visual clarity, similarity to static HTML, validation
+ - **Ease of container coding**: Simplity, visual clarity, similarity to static HTML, validation
  - **Ease of data-entry**: Redundancy, complexity, risk
  - **Performance**: Page load times, caching
 
