@@ -162,5 +162,10 @@ I haven't had a chance to compare yet. Comparison should look at:
  - **Ease of container coding**: Simplity, visual clarity, similarity to static HTML, validation
  - **Ease of data-entry**: Redundancy, complexity, risk
  - **Performance**: Page load times, caching
+ - **Size**: How big is the JS?
+ - **Features**: Does it support:
+ 	- multiple group headers with metadata
+ 	- subtempates
+ 	- normal CSS
 
 # Contributors Welcomed!
