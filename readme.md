@@ -95,7 +95,7 @@ To show the header-template above a group, the group container must have the `mt
 	
 Rendered:
 
-![image  width="100"](https://user-images.githubusercontent.com/53209681/205509928-25239425-970c-4137-8a22-0b644d3e4cb6.png)
+[<img src="https://user-images.githubusercontent.com/53209681/205509928-25239425-970c-4137-8a22-0b644d3e4cb6.png" width="250"/>](https://user-images.githubusercontent.com/53209681/205509928-25239425-970c-4137-8a22-0b644d3e4cb6.png)
 
 ## Template
 
@@ -142,19 +142,6 @@ A simple newline-delimited list. The field delimiter is one newline character. T
 	ilcolors.com
 	It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web sites still in their infancy. Various versions have evolved over the years, sometimes by accident, sometimes on purpose (injected humour and the like).
 
-</MT-records>
-```
-
-**NOTE: The current release is still based on my previous format, and won't yet work with the above format. Here's the current format in the current release. You can clearly see the above newline-field-delimiter offers easier manual editing. **
-
-```
-<MT-records hidden id="sculptors">
-	NAME	~	IMG	~	LINK
-	Orlie Kapitulnik	~	orliek-crop-2.jpg	~	orliek.com
-	Khang Le Schoenthal	~	khang.jpg	~	khangle.webflow.io
-	Ivan Lopez	~	ivan-lopez-crop.jpg	~	ilcolors.com
-	Genevieve Dupre	~	genevieve-dupre-crop.jpg	~	genevievetattoos.com
-	Joey Armstrong	~	joey-armstrong-crop-1.jpg	~	thunderhandtattoo.com
 </MT-records>
 ```
 
