@@ -145,4 +145,18 @@ ilcolors.com
 	</mt-records>
 ```
 
+## Other Client-Side Templating Systems
+
+http://www.jsonml.org/bst/
+https://johnresig.com/blog/javascript-micro-templating/
+https://code.google.com/archive/p/trimpath/wikis/JavaScriptTemplates.wiki
+http://jsont.squarespace.com/
+
+### Comparison
+
+I haven't had a chance to compare yet. Comparison should look at:
+ - **Ease of HTML coding**: Simplity, visual clarity, similarity to statid HTML, validation
+ - **Ease of data-entry**: Redundancy, complexity, risk
+ - **Performance**: Page load times, caching
+
 # Contributors Welcomed!
