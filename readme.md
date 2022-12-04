@@ -76,6 +76,8 @@ The insertion point in the webpage for the rendered merge. Container attributes 
 
 MT features grouping with metadata. This enables to create a header-template to display above each of multiple groups in the same container, based on the same template, each with a different dataset. For example: Artist template with groups: Sculptors, Painters. Dev can enter metadata into container to display in each group header. That metadata will get loaded into each group-header. 
 
+To show the header-template above a group, the group container must have the `mt-header` attribute, pointing to the header template. 
+
 	<span  mt-template="artist" mt-records="sculptors" mt-header="artists-header" mt-meta="
 		TITLE: SCULPTORS
 		SUBTITLE:People Who Sculpt. We like them.
@@ -92,6 +94,8 @@ MT features grouping with metadata. This enables to create a header-template to 
 	</span>
 	
 Rendered:
+
+![image  width="100"](https://user-images.githubusercontent.com/53209681/205509928-25239425-970c-4137-8a22-0b644d3e4cb6.png)
 
 ## Template
 
