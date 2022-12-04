@@ -148,8 +148,11 @@ ilcolors.com
 ## Other Client-Side Templating Systems
 
 http://www.jsonml.org/bst/
+
 https://johnresig.com/blog/javascript-micro-templating/
+
 https://code.google.com/archive/p/trimpath/wikis/JavaScriptTemplates.wiki
+
 http://jsont.squarespace.com/
 
 ### Comparison
