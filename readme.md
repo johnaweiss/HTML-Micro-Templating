@@ -42,7 +42,7 @@ This system *isn't* for templating an entire website or webpage. It's for repeat
  - Variable data can be inserted anywhere in the template's HTML, including element metadata. 
  - Clean, resilient code. 
 
-https://replit.com/@johnaweiss/Micro-Template-Demo?v=1
+https://replit.com/@johnaweiss/JS-Templating-with-groups?v=1
 
 ## Operation
 
