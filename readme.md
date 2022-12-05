@@ -97,7 +97,7 @@ Rendered:
 
 Something like this:
 
-![image](https://user-images.githubusercontent.com/53209681/205672112-e6f0b3e4-6071-4f76-9006-5b34352be602.png)
+[<img src="https://user-images.githubusercontent.com/53209681/205672112-e6f0b3e4-6071-4f76-9006-5b34352be602.png" width="250"/>](https://user-images.githubusercontent.com/53209681/205672112-e6f0b3e4-6071-4f76-9006-5b34352be602.png)
 
 
 ## Template
