@@ -72,6 +72,25 @@ The insertion point in the webpage for the rendered merge. Container attributes 
 
 `<span MT-records="EEs" MT-template="engineer" class="engineers"></span>`
 
+
+## Template
+
+Arbitrary, user-defined HTML structure to be repeated for each record. Contains field-placeholders which get automatically loaded with data from Records. Placeholders are indicated with double-brackets `[[MyField]]`. You can use template-variable for anything: tags, attributes, content, etc. For example, as the source of an image
+`<img src = [[IMAGE-DATA]] alt = "">`
+
+```
+<template id="artist">
+	<span class="artist">
+		<a target="_blank" href="http://[[LINK]]">
+			<img src="https://bayviewboom.org/data/uploads/photos/people/artists/[[IMG]]" alt="">
+			<div class="caption">[[NAME]]</div>
+		</a>
+	</span>
+</template> 
+```
+
+
+
 ## Grouping
 
 MT features grouping with metadata. This enables to create a header-template to display above each of multiple groups in the same container, based on the same template, each with a different dataset. For example: Artist template with groups: Sculptors, Painters. Dev can enter metadata into container to display in each group header. That metadata will get loaded into each group-header. 
@@ -97,22 +116,6 @@ Renders like this:
 
 [<img src="https://user-images.githubusercontent.com/53209681/205672112-e6f0b3e4-6071-4f76-9006-5b34352be602.png" width="250"/>](https://user-images.githubusercontent.com/53209681/205672112-e6f0b3e4-6071-4f76-9006-5b34352be602.png)
 
-
-## Template
-
-Arbitrary, user-defined HTML structure to be repeated for each record. Contains field-placeholders which get automatically loaded with data from Records. Placeholders are indicated with double-brackets `[[MyField]]`. You can use template-variable for anything: tags, attributes, content, etc. For example, as the source of an image
-`<img src = [[IMAGE-DATA]] alt = "">`
-
-```
-<template id="artist">
-	<span class="artist">
-		<a target="_blank" href="http://[[LINK]]">
-			<img src="https://bayviewboom.org/data/uploads/photos/people/artists/[[IMG]]" alt="">
-			<div class="caption">[[NAME]]</div>
-		</a>
-	</span>
-</template> 
-```
 
 ## Records
 
