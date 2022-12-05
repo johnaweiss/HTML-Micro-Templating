@@ -1,81 +1,96 @@
-<!DOCTYPE html>
+MT - Master, with meta and groups
+
 <html>
 
-<head>
-	<meta charset="utf-8">
-	<meta name="viewport" content="width=device-width">
-	<title>MT - Meta</title>
-	<link href="style.css" rel="stylesheet" type="text/css" />
-	<script src="micro-template.js"></script>
-</head>
-
-
-<body>
-
-	<!-- containers -->
-	<span  mt-template="artist" mt-records="sculptors" mt-header="artists-header" mt-meta="
-		TITLE: SCULPTORS
-		SUBTITLE:People Who Sculpt. We like them.
-		DESCRIPTION:How can you insert a whole paragraph here? We needs a table!">
-	</span>
+		<head>
+		<title>Micro Templating Demo</title>
+		  
+		<!-----------------  TEMPLATING SCRIPT  ------------------->
+		<script src="mt.js"></script>
+		
+		<!-- Micro Template functionality has no stylesheet dependencies.   -->
+		<link rel="stylesheet" type="text/css" href="style.css">
+	
+		<!-----------------  EXTERNAL DATA FILE  ------------------- 
+		Can move records to external files. A file can contain multiple datasets. 
+		If move datasets to external file, uncomment the statement below, 
+		and change the extension of this .html file to .php
+		<?php echo file_get_contents("Records.html"); ?>
+		-->
+	
+	</head>
 
 	
-	<span  mt-template="artist" mt-records="painters" mt-header="artists-header" mt-meta="
-		TITLE: PAINTERS
-		SUBTITLE:               Painters are out of their minds.
-		DESCRIPTION:Don't even ask."> 
-	</span>
+	<body>
+
+		<H1>HTML Micro-Template Demonstration</H1>
+		
+		<!-------------- MERGE CONTAINER ------------------->
+		<H3>HTML Layout 1, Group 1</H3>
+		<span mt-template="artist" mt-records="EEs" class="artists"></span>
+		<hr>
+		
+		<!-------------- GROUP CONTAINER 1  ------------------->
+		<span mt-header="engineers" mt-meta="
+			TITLE:HTML Layout 2, Group 1
+			SUBTITLE: Electrical Engineers
+			RECORDS: EEs
+			"></span>
+		<hr>
+
+		<!-------------- GROUP CONTAINER 2  ------------------->
+		<span mt-header="engineers" mt-meta="
+			TITLE:HTML HTML Layout 2, Group 2
+			SUBTITLE: Mechanical Engineers
+			RECORDS: MEs
+			"></span>
+		<hr> 
+	  	
+		<!-- repl badge -->
+		<script src="https://replit.com/public/js/replit-badge.js" theme="blue", Defer></script>
+		
+  	</body>
 
 	
-	<span mt-template="art-group" mt-records="art-groups" class="art-groups"></span>
+	<!-------------- TEMPLATES ------------------>
+	<mt-templates>
 
-
-</body>
-
-
-<mt-templates>
-
-	<!-- group header template -->
-	<template id="artists-header">
-		<span class="artists-header">
-			<h1 class="group-title">[[TITLE]]</h1>
-			<h2 class="group-subtitle">[[SUBTITLE]]</h2>
-			<p class="group-description">[[DESCRIPTION]]</p>
-		</span>
-	</template
+		<template id="engineers">
+			<H3>[[TITLE]]</H3>
+			<H4>[[SUBTITLE]]</H4>
+			<!-- CONTAINER FOR ITEMS -->
+			<span mt-template="engineer" mt-records="[[RECORDS]]" class="engineers"></span>
+		</template>
 
 		
-	<!-- item template -->
-	<template id="artist">
-		<span class="artist">
-			<a href="[[LINK]]" target="_blank">
-				<div>[[NAME]]</div>
-				<img src="https://bayviewboom.org/data/uploads/photos/people/artists/[[IMG]]" alt="">
-			</a>
-			<blockquote>[[DESCRIPTION]]</blockquote>
-			<br>
-		</span>
-	</template>
+		<template id="engineer">
+			<span class="engineer">
+				<div class="title">An Engineer</div>				
+				<a target="_blank" href="http://[[LINK]]">
+					<img src="https://tinyurl.com/2mv3jtzh/[[IMG]]" alt="">
+					<div class="caption">[[NAME]]</div>
+				</a>
+			</span>
+		</template>
 
+		
+		<template id="artist">
+			<span class="artist">
+					<div class="caption">[[NAME]]</div>
+					<img src="https://tinyurl.com/2mv3jtzh/[[IMG]]" alt="">
+			</span>
+		</template>
 
-	<!-- art groups template -->
-	<template id="art-group">
-		<span class="art-group">
-			<h1 class="group-title">[[NAME]]</h1>
-			<h2 class="group-subtitle">They [[VERB]]</h2>
-			<img src=[[IMG]] target=_blank>
-			<div class="group-description">[[INTRO]]</div>
-			<br>
-		</span>
-	</template
+	</mt-templates>
+		
 
-</mt-templates>
+	<!-------------- RECORDSETS ------------------>
+		<!-- White space surrounding the delimiter is ignored, and not required. -->
+		<!-- Column order doesn't matter -->
+	
+	<mt-recordsets>
 
-
-<!-- data -->
-<mt-data>
-
-	<mt-records hidden id="sculptors" mt-parent="arts">
+	<mt-records hidden id="EEs">
 		NAME
 		IMG
 		LINK
@@ -84,7 +99,7 @@
 	Orlie Kapitulnik
 	orliek-crop-2.jpg
 	orliek.com
-	Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, and going through the cites of the word in classical literature, discovered the undoubtable source. Lorem Ipsum comes from sections 1.10.32 and 1.10.33 of "de Finibus Bonorum et Malorum" (The Extremes of Good and Evil) by Cicero, written in 45 BC. This book is a treatise on the theory of ethics, very popular during the Renaissance. The first line of Lorem Ipsum, "Lorem ipsum dolor sit amet..", comes from a line in section 1.10.32.
+	Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. 
 
 
 
@@ -92,17 +107,17 @@
 		Khang Le Schoenthal
 		khang.jpg
 		khangle.webflow.io
-		There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. If you are going to use a passage of Lorem Ipsum, you need to be sure there isn't anything embarrassing hidden in the middle of text. All the Lorem Ipsum generators on the Internet tend to repeat predefined chunks as necessary, making this the first true generator on the Internet. It uses a dictionary of over 200 Latin words, combined with a handful of model sentence structures, to generate Lorem Ipsum which looks reasonable. The generated Lorem Ipsum is therefore always free from repetition, injected humour, or non-characteristic words etc.
+		There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. 
 
 
   Ivan Lopez
     ivan-lopez-crop.jpg
 ilcolors.com
-  It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web sites still in their infancy. Various versions have evolved over the years, sometimes by accident, sometimes on purpose (injected humour and the like).
+  It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. 
 	</mt-records>
 
 
-	<mt-records hidden id="painters">
+	<mt-records hidden id="MEs">
 		NAME
 		IMG
 		LINK
@@ -118,25 +133,8 @@ ilcolors.com
 		https://thunderhandtattoo.com
 		The most amazing.
 	</mt-records>
-
+		
+	</mt-recordsets>
 	
-	<mt-records hidden id="art-groups">		
-		NAME
-		IMG
-		VERB
-		INTRO
-		
-		Sculpture
-		https://tinyurl.com/mrxvefbz
-		sculpt
-		Sculptors are mellow, patient. 
-		
-		Painting
-		https://image.cnbcfm.com/api/v1/image/107152011-1668532634157-klimt.jpg
-		paint
-		Painters are out of their minds. 
-	</mt-records>
-
-</mt-data>
-
+	
 </html>
