@@ -78,24 +78,22 @@ MT features grouping with metadata. This enables to create a header-template to 
 
 To show the header-template above a group, the group container must have the `mt-header` attribute, pointing to the header template. 
 
-	<span  mt-template="artist" mt-records="sculptors" mt-header="artists-header" mt-meta="
-		TITLE: SCULPTORS
-		SUBTITLE:People Who Sculpt. We like them.
-		DESCRIPTION:How can you insert a whole paragraph here? We needs a table!
-		">
-	</span>
+		<!-------------- GROUP CONTAINER 1  ------------------->
+		<span mt-header="engineers" mt-meta="
+			TITLE:HTML Layout 2, Group 1
+			SUBTITLE: Electrical Engineers
+			RECORDS: EEs
+			"></span>
 
 
-	<span  mt-template="artist" mt-records="painters" mt-header="artists-header" mt-meta="
-		TITLE: PAINTERS
-		SUBTITLE:               Painters are out of their minds.
-		DESCRIPTION:Don't even ask.
-		"> 
-	</span>
+		<!-------------- GROUP CONTAINER 2  ------------------->
+		<span mt-header="engineers" mt-meta="
+			TITLE:HTML HTML Layout 2, Group 2
+			SUBTITLE: Mechanical Engineers
+			RECORDS: MEs
+			"></span>
 	
-Rendered:
-
-Something like this:
+Renders like this:
 
 [<img src="https://user-images.githubusercontent.com/53209681/205672112-e6f0b3e4-6071-4f76-9006-5b34352be602.png" width="250"/>](https://user-images.githubusercontent.com/53209681/205672112-e6f0b3e4-6071-4f76-9006-5b34352be602.png)
 
