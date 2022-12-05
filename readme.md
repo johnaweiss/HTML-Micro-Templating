@@ -95,7 +95,10 @@ To show the header-template above a group, the group container must have the `mt
 	
 Rendered:
 
-[<img src="https://user-images.githubusercontent.com/53209681/205509928-25239425-970c-4137-8a22-0b644d3e4cb6.png" width="250"/>](https://user-images.githubusercontent.com/53209681/205509928-25239425-970c-4137-8a22-0b644d3e4cb6.png)
+Something like this:
+
+![image](https://user-images.githubusercontent.com/53209681/205672112-e6f0b3e4-6071-4f76-9006-5b34352be602.png)
+
 
 ## Template
 
