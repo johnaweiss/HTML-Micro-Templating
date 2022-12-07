@@ -162,10 +162,11 @@ http://jsont.squarespace.com/
 ### Comparison
 
 I haven't had a chance to compare yet. Comparison should look at:
- - **Ease of template coding**: Simplity, visual clarity, similarity to static HTML, validation
- - **Ease of container coding**: Simplity, visual clarity, similarity to static HTML, validation
- - **Ease of data-entry**: Redundancy, complexity, risk
+ - **Ease of template coding**: Simplity, visual clarity, normal HTML with syntax coloring? Or, is the template a confusing mix of javascript and HTML? Does it validate?
+ - **Ease of HTML container coding**: Simplity, visual clarity, similarity to static HTML, validation
+ - **Ease of HTML data-entry**: Redundancy, complexity, risk
  - **Performance**: Page load times, caching
+ - **Code**: Is it well-structured, good coding practices like meaningful variable names, etc?
  - **Size**: How big is the JS?
  - **Features**: Does it support:
  	- multiple group headers with metadata
