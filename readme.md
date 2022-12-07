@@ -4,7 +4,7 @@
 A robust, lightweight system which puts node templating in the hands of the HTML developer. It enables the HTML dev to easily control the layout of a long series of identical HTML sibling-nodes, each containing different content. 
 
 ## "Shouldn't templating be done server-side?"
-This tool isn't trying to replace server-side templating. For sure, in any complex system with many tables and sub-templates, server-side templating is the way to go. 
+This tool isn't trying to replace server-side templating. For sure, in any complex system with many tables and many records, server-side templating is the way to go. 
 
 But often, server-side templating is overkill or unobtainable:
  - on small projects
