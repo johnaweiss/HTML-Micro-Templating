@@ -173,5 +173,7 @@ I haven't had a chance to compare yet. Comparison should look at:
  	- subtempates
  	- normal CSS
  - **Dependencies**: External libraries? Special CSS? 
+ - **Dev Status**: Stable, Bug-Free? 
+ - **Community**: Posted on github or another code-centric platform? Open source? 
 
 # Contributors Welcomed!
