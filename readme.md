@@ -172,5 +172,6 @@ I haven't had a chance to compare yet. Comparison should look at:
  	- multiple group headers with metadata
  	- subtempates
  	- normal CSS
+ - **Dependencies**: External libraries? Special CSS? 
 
 # Contributors Welcomed!
