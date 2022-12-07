@@ -166,7 +166,7 @@ I haven't had a chance to compare yet. Comparison should look at:
  - **Ease of HTML container coding**: Simplity, visual clarity, similarity to static HTML, validation
  - **Ease of HTML data-entry**: Redundancy, complexity, risk
  - **Performance**: Page load times, caching
- - **Code**: Is it well-structured, good coding practices like meaningful variable names, etc?
+ - **Code**: Is it well-structured, good coding practices like meaningful variable names, etc? Uses the latest Javascript enhancements, like array functions and arrow syntax?
  - **Size**: How big is the JS?
  - **Features**: Does it support:
  	- multiple group headers with metadata
