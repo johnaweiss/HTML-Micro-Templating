@@ -3,6 +3,12 @@
 
 A free, robust, code-free lightweight system which puts node templating in the hands of the HTML developer. It enables the HTML dev to easily control the layout of a long series of identical HTML sibling-nodes, each containing different content. 
 
+## Status
+
+Stable release. No known bugs. 
+
+## "Code-Free"
+
 "Code free" means the HTML dev never has to write or deal with Javascript. This tool enables an HTML dev to create and use templates with pure HTML, without having to do any Javascript programming. 
 
 ## "Shouldn't templating be done server-side?"
