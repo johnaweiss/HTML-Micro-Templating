@@ -95,7 +95,7 @@ Arbitrary, user-defined HTML structure to be repeated for each record. Contains 
 
 ## Grouping
 
-MT features grouping with metadata. This enables to create a header-template to display above each of multiple groups in the same container, based on the same template, each with a different dataset. For example: Artist template with groups: Sculptors, Painters. Dev can enter metadata into container to display in each group header. That metadata will get loaded into each group-header. 
+MT offers an alternate container style which makes separate groups, for different datasets with the same layout. This enables to create a header-template to display above each of multiple groups in the same page, based on the same template, each with a different dataset. For example: Artist template with groups: Sculptors, Painters. Dev can enter metadata into container to display in each group header. That metadata will get loaded into each group-header. 
 
 To show the header-template above a group, the group container must have the `mt-header` attribute, pointing to the header template. 
 
