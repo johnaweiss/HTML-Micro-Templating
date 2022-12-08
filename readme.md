@@ -124,30 +124,18 @@ Renders like this:
 Records block is intended to make data-entry and viewing human-easy. It's a simple newline-delimited list. The field delimiter is one newline character. The record delimiter is two or more newline characters (so you can add several extra empty newlines betweeen records for visual clarity, if desired). This layout was chosen for visual clarity: every field clearly starts on a newline, instead of being buried somewhere in a contnuous block of text. Fieldnames are stated only once, on the first row -- they don't have to be repeated for each record. There's no character field-delimiter, so no characters are off-limits, eg no conflict with commas in the data, no escape characters needed. To simplify data-entry, it uses no brackets, braces, parens, single-quotes, double-quotes, or angles. Whitespace (tabs or spaces) surrounding the field-delimiter isn't required, and will be ignored. Headers must match fieldnames in the template. **With extremely long data, turn off word-wrap in your HTML editor to more clearly see the start of each field.**
 
 ```
-	<mt-records hidden id="sculptors" mt-parent="arts">
+	<mt-records hidden id="tattooists">
 		NAME
-		IMG
 		LINK
 		DESCRIPTION
-              
-	Orlie Kapitulnik
-	orliek-crop-2.jpg
-	orliek.com
-	Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. 
 
+		Genevieve Dupre
+		https://www.genevievetattoos.com
+		This isn't what you expected.
 
-
-		
-		Khang Le Schoenthal
-		khang.jpg
-		khangle.webflow.io
-		There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. 
-
-
-  Ivan Lopez
-    ivan-lopez-crop.jpg
-ilcolors.com
-  It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. 
+		Joey Armstrong
+		https://thunderhandtattoo.com
+		The most amazing.
 	</mt-records>
 ```
 
