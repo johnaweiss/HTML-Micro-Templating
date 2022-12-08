@@ -166,8 +166,9 @@ http://jsont.squarespace.com/
 I haven't had a chance to compare yet. Comparison should look at:
  - **Code Free**: Can HTML devs make templates without writing or knowing Javascript?
  - **Attributes**: Does it support template-fields in the HTML attributes? Or only content?
- - **Ease of template coding**: Simplity, visual clarity, normal HTML with syntax coloring? Or, is the template a confusing mix of javascript and HTML? Does it validate?
- - **Ease of HTML container coding**: Simplity, visual clarity, similarity to static HTML, validation
+ - **Ease of template coding**: Is the template normal HTML with syntax coloring? Or, is the template a confusing mix of javascript and HTML? 
+ - **Validation**: Does it validate?
+ - **Ease of HTML container coding**: Normal HTML?
  - **Ease of HTML data-entry**: Redundancy, complexity, risk
  - **Performance**: Page load times, caching
  - **JS Code**: Is it well-structured, good coding practices like meaningful variable names, etc? Or indecipherable spaghetti code? Uses the latest Javascript enhancements, like array functions and arrow syntax?
