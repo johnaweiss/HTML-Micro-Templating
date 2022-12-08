@@ -70,9 +70,9 @@ These are the elements that must appear on the webpage:
 
 ## Container
 
-The insertion point in the webpage for the rendered merge. Container attributes are used to set the ID's of the template and recordset to merge. We use "MT-" prefix for all custom HTML tags and attributes. The class of the container isn't required for Micro-Template operation. Its just for styling. 
+The insertion point in the webpage for the rendered merge. Container attributes are used to set the ID's of the template and recordset to merge. We use "mt-" prefix for all custom HTML tags and attributes. The class of the container isn't required for Micro-Template operation. Its just for styling. 
 
-`<span MT-records="EEs" MT-template="engineer" class="engineers"></span>`
+`<span mt-records="EEs" mt-template="engineer" class="engineers"></span>`
 
 
 ## Template
