@@ -11,6 +11,8 @@ This system *isn't* for templating an entire website or webpage. It's for repeat
 
 Stable release. No known bugs. 
 
+Latest release is on Releases page. 
+
 ## "Code-Free"
 
 "Code free" means the HTML dev never has to write or deal with Javascript. This tool enables an HTML dev to create and use templates with pure HTML, without having to do any Javascript programming. 
