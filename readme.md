@@ -35,7 +35,7 @@ Micro Template is designed to minimize effort and reduce keystrokes for the HTML
 
 The layout of all the clones is edited in one place, so it's easy to edit ten's or hundreds of clones at the same time. 
 
-It's easy to update the data-records separately from the HTML, because it is separate from the HTML. The data can be stored right inside the webpage, or in an external flat file. No database required. In-page storage is especially handy when you have only a few items which change rarely, and a database would be overkill. 
+It's easy to update the data-records separately from the HTML, because it is separate from the HTML. The data can be stored right inside the webpage, or soon, in an external flat file. No database required. In-page storage is especially handy when you have only a few items which change rarely, and a database would be overkill. 
 
 ## Benefits
 
