@@ -92,7 +92,7 @@ Arbitrary, user-defined HTML structure to be repeated for each record. Contains 
 <template id="artist">
 	<span class="artist">
 		<a target="_blank" href="http://{{LINK}}">
-			<img src="https://bayviewboom.org/data/uploads/photos/people/artists/{{IMG}}" alt="">
+			<img src="/data/uploads/photos/people/artists/{{IMG}}" alt="">
 			<div class="caption">{{NAME}}</div>
 		</a>
 	</span>
