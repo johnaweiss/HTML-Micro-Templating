@@ -1,0 +1,87 @@
+		<script src="/theme/common/js/mt.js"></script>
+
+		<link rel="stylesheet" href="/theme/common/css/artists.css">
+
+		<h4>These amazing artists have generously donated wonderful artwork to decorate our youth-built boomboxes. </h4>
+
+		<!-- ------------ SINGLES CONTAINER  ----------------- -->
+		<mt-container mt-records="artists-recs" mt-template="artist" class="art-items"></mt-container>			
+
+
+	<!-------------- TEMPLATES ------------------>
+	<mt-templates>
+		
+		<template id="artist">
+			<span class="art-item">
+				<a target="_blank" href="{{LINK}}">
+					<div class="img-clip">
+						<img loading="lazy" onmouseenter="this.style.animation='idle'" src="/data/uploads/photos/people/artists/{{IMG}}" alt="">
+					</div>
+					<div class="caption">{{NAME}}</div>
+				</a>
+			</span>
+		</template>
+		
+	</mt-templates>
+
+	
+	<!-------------- RECORDS ------------------>
+	<mt-recordsets hidden>
+		
+		<!-- SCHEMA -->
+		<mt-fields id="artist-fields">
+			NAME
+			IMG
+			LINK
+		</mt-fields>
+
+
+		<!-- RECORDSET -->
+		<mt-records id="artists-recs" mt-fields="artist-fields">
+
+			Elisa Sassi
+			elisa-sassi-bike-crop.jpg
+			https://elisasassi.com
+			
+			Sirron Norris
+			sirron-crop.jpg
+			http://www.sirronnorris.com
+			
+			Khang Le Schoenthal
+			khang.jpg
+			https://khangle.webflow.io
+			
+			Nigel Sussman
+			Nigel Sussman.jpg
+			https://www.nigelsussman.com
+			
+			Ador & Semor
+			ador-semor-crop-3.jpg
+			https://thesemor.tumblr.com/Ador&Semor
+			
+			Kelly Koehler-Gorman
+			kelly-koehler-gorman.jpg
+			https://www.instagram.com/knkknk
+			
+			Ivan Lopez
+			ivan-lopez-crop.jpg
+			http://www.ilcolors.com
+			
+			Mario Cid
+			mario-cid.png
+			https://www.instagram.com/cid_mario
+			
+			Orlie Kapitulnik
+			orliek-crop-2.jpg
+			http://www.orliek.com
+			
+			Genevieve Dupre
+			genevieve-dupre-crop.jpg
+			https://www.genevievetattoos.com
+			
+			Joey Armstrong
+			joey-armstrong-crop-1.jpg
+			https://thunderhandtattoo.com
+		</mt-records>
+
+	</mt-recordsets>

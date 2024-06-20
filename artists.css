@@ -1,0 +1,41 @@
+.art-items {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+	}
+
+
+.art-item {
+	text-align: center;
+	width: 250px;
+	margin-bottom: 30px;	
+	}
+
+
+.art-item a {
+	text-decoration: none;
+	}
+
+
+.img-clip {
+	height: 190px;
+	width: 200px;
+	overflow: hidden;
+	border: solid;
+	margin-bottom: 8px;
+	background-color: black;
+	}
+
+
+.art-item img {
+	width: 200px;
+	}
+
+
+.caption {
+	background: lightgoldenrodyellow;
+	width: 200px;
+	border: solid;
+	padding: 4px;
+	}
+	
