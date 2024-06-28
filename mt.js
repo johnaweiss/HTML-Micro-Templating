@@ -123,9 +123,20 @@ function getFields(viewNode) {
   const dataNode = document.getElementById(sDataContainer);
   const schemaName = dataNode.getAttribute(gAppPref + "fields");
 
-  const schemaNode = document.getElementById(schemaName);
-  const rawFields = schemaNode.innerText.trim();
-  const fields = rawFields.split(gFldDelim);
+  let fields = [];
+
+  if (schemaName) {
+    // get fieldnames from mt-fields
+    const schemaNode = document.getElementById(schemaName);
+    const rawFields = schemaNode.innerText.trim();
+    fields = rawFields.split(gFldDelim);
+  } else {
+    // get fieldnames from mt-records
+    const rawData = dataNode.innerText.trim();
+    const rawFields = rawData.split(gRecDelim)[0];
+    fields = rawFields.split(gFldDelim);
+  }
+
   return fields;
 }
 
@@ -168,7 +179,18 @@ function getRawData(container) {
   const dataElement = document.querySelector(`${gAppPref}records#${dataID}`);
 
   // get records contents
-  const rawData = dataElement.innerText.trim();
+  let rawData = dataElement.innerText.trim();
+
+  // check if 'mt-fields' attribute exists
+  const schemaName = dataElement.getAttribute(gAppPref + "fields");
+
+  // remove the first record from records contents if no 'mt-fields' attribute
+  if (!schemaName) {
+    const rawRecords = rawData.split(gRecDelim);
+    rawRecords.shift();
+    rawData = rawRecords.join("\n\n");
+  }
+
   return rawData;
 }
 
@@ -193,7 +215,7 @@ function mergeRecords(templateHTML, fields, records) {
   return allRecordsHTML;
 }
 
-function mergeRecord(templateHTML, dataFields, record) {
+function mergeRecord(templateHTML, fields, record) {
   let recordHTML = templateHTML;
 
   // LOOP PLACEHOLDERS in the template
