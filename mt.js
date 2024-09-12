@@ -8,8 +8,10 @@ const gAppPref = 'mt-';
 const gFldDelim = /(?:\n[ \t]*)(?=\w)/g;
 const gRecDelim = /(?:\n[ \t]*){2,}(?=\w)/g;
 
-window.onload = function Merge_Templates() {
+// global boolean to indicate if schema is embedded in html
+let gHasEmbeddedSchema;
 
+window.onload = function Merge_Templates() {
   // loop each container in body. Singlets first, then Collections.
 
   // single recordset templates (not recordset collections)
@@ -17,16 +19,16 @@ window.onload = function Merge_Templates() {
   loopOrphanSinglets();
 
   // collection
-  const collViewNodes = document.querySelectorAll(
+  const collContainers = document.querySelectorAll(
     gAppPref + 'container[' + gAppPref + 'collection]'
   );
 
   // loop and render collection-containers
-  collViewNodes.forEach(collViewNode => {
-    makeRecordsetHeaders(collViewNode);
+  collContainers.forEach((oContainer) => {
+    makeRecordsetHeaders(oContainer);
 
     // singlets
-    loopCollRecordsets(collViewNode);
+    loopCollRecordsets(oContainer);
   });
 };
 
@@ -35,22 +37,21 @@ function loopOrphanSinglets() {
   const singletContainers = document.querySelectorAll(
     gAppPref + 'container[' + gAppPref + 'records]'
   );
-  
+
   // loop and render recordset-containers
-  singletContainers.forEach(snglContain => {
-    
-  // get fields from parent attribs before looping
-    fields = getFields(snglContain);
-  $("fields", fields )
-  
+  singletContainers.forEach((snglContain) => {
+    // get fields from parent attribs before looping
+    const fields = getFields(snglContain);
+    $('fields', fields);
+
     // merge records into template
-    loadMerge(snglContain);
+    loadMerge(snglContain, fields);
   });
 }
 
 function loopCollRecordsets(scope) {
   // get fields from parent attribs before looping
-  fields = getFields(scope);
+  const fields = getFields(scope);
 
   // singlets
   const singletContainers = scope.querySelectorAll(
@@ -58,9 +59,9 @@ function loopCollRecordsets(scope) {
   );
 
   // loop and render recordset-containers
-  singletContainers.forEach(snglContain => {
+  singletContainers.forEach((snglContain) => {
     // merge records into template
-    loadMerge(snglContain);
+    loadMerge(snglContain, fields);
   });
 }
 
@@ -74,7 +75,7 @@ function makeRecordsetHeaders(collContainer) {
   const collectionRecordsets = getCollectionRecordsets(collContainer);
 
   // loop recordsets. Write merged template for each
-  collectionRecordsets.forEach(recordset => {
+  collectionRecordsets.forEach((recordset) => {
     makeRecordsetHeader(collContainer, templateHTML, recordset);
   });
 }
@@ -87,7 +88,7 @@ function makeRecordsetHeader(collContainer, templateHTML, recordset) {
 
   // replace fields in template with metadata from recordset
   const metas = getAppMeta(recordset);
-  Object.keys(metas).forEach(key => {
+  Object.keys(metas).forEach((key) => {
     recordsetHTML = recordsetHTML.replaceAll(`[[${key}]]`, metas[key].trim());
   });
 
@@ -114,30 +115,45 @@ function getCollectionRecordsets(collContainer) {
   return recordsets;
 }
 
-function getFields(viewNode) {
+function getFields(oContainer) {
   // return fields from mt-fields node, which is the parent of the collection or recordset
   // if view-container points to collection, get fieldset-name from collection data-container
   // if view-container points to recordset, get fieldset-name from recordset data-container
-  let sDataContainer = viewNode.getAttribute(gAppPref + 'collection');
-  if (!sDataContainer)
-    sDataContainer = viewNode.getAttribute(gAppPref + 'records');  
+  let sRecordset =
+    oContainer.getAttribute(gAppPref + 'collection') ||
+    oContainer.getAttribute(gAppPref + 'records');
 
-  const dataNode = document.getElementById(sDataContainer);
+  const dataNode = document.getElementById(sRecordset);
+
+  // look for schema in HTML
   const schemaName = dataNode.getAttribute(gAppPref + 'fields');
-  const schemaNode = document.getElementById(schemaName);
-  const rawFields = schemaNode.innerText.trim();
+  gHasEmbeddedSchema = !!schemaName;
+
+  let rawFields;
+
+  if (schemaName) {
+    // get fieldnames from schema if found in HTML
+    const schemaNode = document.getElementById(schemaName);
+    rawFields = schemaNode.innerText.trim();
+  } else {
+    // get fieldnames from top of recordset, which look like the first record in the dataset
+    const rawData = dataNode.innerText.trim();
+    rawFields = rawData.split(gRecDelim)[0];
+  }
+
   const fields = rawFields.split(gFldDelim);
+
   return fields;
 }
 
-function loadMerge(snglContain) {
+function loadMerge(snglContain, fields) {
   // load records into template
 
   // get template
   const templateHTML = getTemplateHTML(snglContain);
 
   // get data
-  records = getData(snglContain);
+  const records = getData(snglContain);
 
   // merge
   const mergeHTML = mergeRecords(templateHTML, fields, records);
@@ -169,14 +185,22 @@ function getRawData(container) {
   const dataElement = document.querySelector(`${gAppPref}records#${dataID}`);
 
   // get records contents
-  const rawData = dataElement.innerText.trim();
+  let rawData = dataElement.innerText.trim();
+
+  // remove field names (first record) if fieldnames embedded in data
+  if (!gHasEmbeddedSchema) {
+    const rawRecords = rawData.split(gRecDelim);
+    rawRecords.shift();
+    rawData = rawRecords.join('\n\n');
+  }
+
   return rawData;
 }
 
 function getRecords(rawData) {
   // load records into array, rows and columns
   const aRows = rawData.trim().split(gRecDelim);
-  const records = aRows.map(sRow => {
+  const records = aRows.map((sRow) => {
     return sRow.split(gFldDelim);
   });
 
@@ -187,14 +211,14 @@ function mergeRecords(templateHTML, fields, records) {
   // make html for each record by merging with temlate
   let allRecordsHTML = '';
 
-  records.forEach(record => {
+  records.forEach((record) => {
     let recordHTML = mergeRecord(templateHTML, fields, record);
     allRecordsHTML += recordHTML;
   });
   return allRecordsHTML;
 }
 
-function mergeRecord(templateHTML, dataFields, record) {
+function mergeRecord(templateHTML, fields, record) {
   let recordHTML = templateHTML;
 
   // LOOP PLACEHOLDERS in the template
@@ -205,7 +229,7 @@ function mergeRecord(templateHTML, dataFields, record) {
   const templateFields = recordHTML.match(templateFieldsRegex);
 
   // loop placeholders
-  templateFields.forEach(templFld => {
+  templateFields.forEach((templFld) => {
     // need to find matching value in record by name
     // we can use dataFields to get column position, or, make record a key:value set
     // need too see trailing underscore (to escape spaces), and with trailing under removed to get value from record
@@ -234,7 +258,7 @@ function mergeRecord(templateHTML, dataFields, record) {
 
 function strToObj(str) {
   // return Object from string. Comma-sep key:value pairs. Just wrap in braces.
-  const obj = Object.fromEntries(str.split(',').map(i => i.split(':')));
+  const obj = Object.fromEntries(str.split(',').map((i) => i.split(':')));
   return obj;
 }
 
